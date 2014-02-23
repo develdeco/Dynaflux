@@ -12,7 +12,7 @@ function _views_slideshow_preprocess_views_slideshow(&$vars) {
   $vars['skin'] = 'default';
   $vars['slideshow'] = '';
   $main_frame_module = $options['slideshow_type'];
-
+  
   if (empty($main_frame_module)) {
     // Get all slideshow types.
     $slideshows = module_invoke_all('views_slideshow_slideshow_info');
