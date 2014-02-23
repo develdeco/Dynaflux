@@ -7,7 +7,7 @@ files/
 sites/default/files/styles
 
 # Ignore default text files
-.htaccess
+# .htaccess
 robots.txt
 /CHANGELOG.txt
 /COPYRIGHT.txt
