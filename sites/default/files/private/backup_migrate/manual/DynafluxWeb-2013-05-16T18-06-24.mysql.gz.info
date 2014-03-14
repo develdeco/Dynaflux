@@ -1,8 +1,0 @@
-filename = "DynafluxWeb-2013-05-16T18-06-24"
-description = ""
-datestamp = "1368745586"
-generator = "Backup and Migrate (http://drupal.org/project/backup_migrate)"
-generatorversion = "7.x-2.x"
-sites[0][version] = "7.20"
-sites[0][name] = "Dynaflux Web"
-sites[0][url] = "http://localhost/sitios_web/dynaflux/"
