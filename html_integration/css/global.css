@@ -1,0 +1,90 @@
+/*CSS file for Dynaflux Front page*/
+.container{
+	width: 1090px;
+}
+.header{
+	background: #7c0406;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7c0406), to(#990002));
+	background-image: -webkit-linear-gradient(#7c0406 0%, #990002 100%);
+	background-image: -moz-linear-gradient(#7c0406 0%, #990002 100%);
+	background-image: -o-linear-gradient(#7c0406 0%, #990002 100%);
+	background-image: linear-gradient(#7c0406 0%, #990002 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7c0406', endColorstr='#990002');
+}
+.header .logo{
+	/*display: inline-block;*/
+	float: left;
+}		
+.header .social{
+	float: right;
+	margin-top: 10px;
+}				
+.header .logo img{
+	width: 75%;
+}
+.header-first{
+	margin-top: 39px;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.social li a{
+	background: url(../img/facebook-icon.png) no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.social li.twitter a{
+	background: url(../img/twitter-icon.png) no-repeat;
+}
+.social li.youtube a{
+	background: url(../img/youtube-icon.png) no-repeat;
+}
+.social .nav > li > a:hover, 
+.social .nav > li > a:focus{
+	background-color: transparent;
+}
+.header-second .navbar-nav > li{
+	background: url(../img/franjaVert_deseleccionado.png) repeat-x;
+}
+.header-second .navbar-nav > li.active{
+	background: url(../img/franjaVert_seleccionado.png) repeat-x;
+}
+.header-second .navbar-nav > li:hover{
+	background: url(../img/franjaVert_seleccionado.png) repeat-x;
+}
+.header-second .navbar-nav > li a{
+	background: none;
+}
+.navbar-default{
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.navbar-default .navbar-nav > .active > a{
+	background: none;
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a{
+	text-transform: uppercase;
+	color: #fff;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus{
+	background-color: transparent; 
+	color: #fff;
+}
+.bx-wrapper {
+	float: left;
+	width: 74%;
+}
+#bx-pager{
+	float: left;
+}
+#bx-pager a{
+	
+    display: inherit;
+}
+.information-blocks{
+	clear: both;
+}
