@@ -38,9 +38,21 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "front/main_front/inicio/es";
 $route['404_override'] = '';
 
+/** Front Routing **/
+$route['es/([a-z\_]+)'] = 'front/main_front/$1/es';
+$route['es/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/es';
+$route['es/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/es';
+
+$route['en/([a-z\_]+)'] = 'front/main_front/$1/en';
+$route['en/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/en';
+$route['en/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/en';
+
+/** Back Routing **/
+$route['admin/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'back/$1_back/$2/$3';
+$route['admin/([a-z\_]+)/([a-z\_]+)'] = 'back/$1_back/$2';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
