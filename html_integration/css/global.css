@@ -1,4 +1,6 @@
 /*CSS file for Dynaflux Front page*/
+p, div { font-family: 'Titillium Web'; font-style: normal; font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-weight: 700; }
 .container{
 	width: 1090px;
 }
@@ -87,4 +89,12 @@
 }
 .information-blocks{
 	clear: both;
+}
+.information-blocks .block{
+	text-align: center;
+}
+.information-blocks .block-title{
+	color: #796161;
+	font-weight: normal;
+	font-size: 21px;
 }

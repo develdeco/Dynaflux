@@ -4,11 +4,11 @@
 	<meta charset="UTF-8" />
 	<title>Dynaflux Homepage</title>
 <!-- 	<meta name="viewport" content="width=device-width" /> -->
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:600,700&amp;subset=latin" media="all">
 	<link rel="stylesheet" type="text/css" media="all" href="css/vendor/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/vendor/bootstrap-theme.css" />
 	<link href="js/vendor/bxslider/jquery.bxslider.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/global.css" />
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script src="js/vendor/bxslider/jquery.bxslider.min.js"></script>
@@ -48,72 +48,109 @@
 			</section>	
 		</header>
 		<section class="container">
-			<section class='slider'>
-				<ul class="bxslider">
-					<li><img src="img/temp/1.png" /></li>
-					<li><img src="img/temp/2.png" /></li>
-					<li><img src="img/temp/3.png" /></li>
-					<li><img src="img/temp/4.png" /></li>
-				</ul>
-				<div id="bx-pager">
-					<a data-slide-index="0" href=""><img src="img/temp/thumb1.png" /></a>
-					<a data-slide-index="1" href=""><img src="img/temp/thumb2.png" /></a>
-					<a data-slide-index="2" href=""><img src="img/temp/thumb3.png" /></a>
-					<a data-slide-index="3" href=""><img src="img/temp/thumb4.png" /></a>
-				</div>
-			</section>
-			<section class="information-blocks">
-				<article class="block">
-					<div class="block-image"><img src="" alt=""></div>
-					<div class="block-title">Lorem ipsum dolor sit ame</div>
-					<div class="block-description">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+			<div class="row">
+				<section class='slider'>
+					<ul class="bxslider">
+						<li><img src="img/temp/1.png" /></li>
+						<li><img src="img/temp/2.png" /></li>
+						<li><img src="img/temp/3.png" /></li>
+						<li><img src="img/temp/4.png" /></li>
+					</ul>
+					<div id="bx-pager">
+						<a data-slide-index="0" href="#"><img src="img/temp/thumb1.png" /></a>
+						<a data-slide-index="1" href="#"><img src="img/temp/thumb2.png" /></a>
+						<a data-slide-index="2" href="#"><img src="img/temp/thumb3.png" /></a>
+						<a data-slide-index="3" href="#"><img src="img/temp/thumb4.png" /></a>
 					</div>
-					<div class="block-button">
-						<button>mas</button>
-					</div>
-				</article>
-				<article class="block">
-					<div class="block-image"><img src="" alt=""></div>
-					<div class="block-title">tempor incididunt ut labore e</div>
-					<div class="block-description">
-						<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-					</div>
-					<div class="block-button">
-						<button>mas</button>
-					</div>
-				</article>
-				<article class="block">
-					<div class="block-image"><img src="" alt=""></div>
-					<div class="block-title">quis nostrud exercitatio</div>
-					<div class="block-description">
-						<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-					</div>
-					<div class="block-button">
-						<button>mas</button>
-					</div>
-				</article>
-				<article class="block">
-					<div class="block-image"><img src="" alt=""></div>
-					<div class="block-title">consequat. Duis aute irure</div>
-					<div class="block-description">
-						<p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-					</div>
-					<div class="block-button">
-						<button>mas</button>
-					</div>
-				</article>
-			</section>
-			<aside>
-				<article class='article widget menu-week'>
-					<h2 class="article-title">Aujourd’hui, l’alimentation est au coeur des préoccupations de chacun.</h2>
-					<p class="article-content">
-						Les avancées de la biochimie ont montré l’importance des éléments vitaux comme les vitamines, les enzymes et les oligo-éléments, pour votre santé...
-					</p>
-					<a class='see-more' href="#">En savoir plus...</a>
-					<img src="img/article-img.png" alt="">
-				</article>
-			</aside>
+				</section>
+				<section class="information-blocks clearfix">
+					<article class="block col-md-3">
+						<div class="block-image"><img src="img/sim1.png" alt=""></div>
+						<div class="block-title">Lorem ipsum dolor sit ame</div>
+						<div class="block-description">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+						</div>
+						<div class="block-button">
+							<button class="btn btn-default">mas</button>
+						</div>
+					</article>
+					<article class="block col-md-3">
+						<div class="block-image"><img src="img/sim2.png" alt=""></div>
+						<div class="block-title">tempor incididunt ut labore e</div>
+						<div class="block-description">
+							<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+						</div>
+						<div class="block-button">
+							<button class="btn btn-default">mas</button>
+						</div>
+					</article>
+					<article class="block col-md-3">
+						<div class="block-image"><img src="img/sim3.png" alt=""></div>
+						<div class="block-title">quis nostrud exercitatio</div>
+						<div class="block-description">
+							<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+						</div>
+						<div class="block-button">
+							<button class="btn btn-default">mas</button>
+						</div>
+					</article>
+					<article class="block col-md-3">
+						<div class="block-image"><img src="img/sim4.png" alt=""></div>
+						<div class="block-title">consequat. Duis aute irure</div>
+						<div class="block-description">
+							<p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+						</div>
+						<div class="block-button">
+							<button class="btn btn-default">mas</button>
+						</div>
+					</article>
+				</section>
+				<section class="projects-finished col-md-4">
+					<h2>proyectos culminados</h2>
+					<ul class="bxslider-projects">
+						<li>
+							<div class="project-title">consectetur adipisicing</div>
+							<div class="project-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+						</li>
+						<li>
+							<div class="project-title">consectetur adipisicing</div>
+							<div class="project-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+						</li>
+						<li>
+							<div class="project-title">consectetur adipisicing</div>
+							<div class="project-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+						</li>
+						<li>
+							<div class="project-title">consectetur adipisicing</div>
+							<div class="project-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+						</li>
+					</ul>
+				</section>
+				<section class="featured-products col-md-4">
+					<h2>productos destacados</h2>
+					<ul class="products">
+						<li>
+							<div class="products-image"><a href="#"><img src="img/temp/p1.gif" alt=""></a></div>
+							<div class="product-title">Lorem ipsum dolor sit amet</div>
+						</li>
+						<li>
+							<div class="products-image"><a href="#"><img src="img/temp/p2.jpg" alt=""></a></div>
+							<div class="product-title">Lorem ipsum dolor sit amet</div>
+						</li>
+						<li>
+							<div class="products-image"><a href="#"><img src="img/temp/p3.jpg" alt=""></a></div>
+							<div class="product-title">Lorem ipsum dolor sit amet</div>
+						</li>
+						<li>
+							<div class="products-image"><a href="#"><img src="img/temp/p1.gif" alt=""></a></div>
+							<div class="product-title">Lorem ipsum dolor sit amet</div>
+						</li>
+					</ul>
+				</section>
+				<section class="lasted-news col-md-4">
+					<h2>ultimas noticias</h2>
+				</section>
+			</div>
 		</section>
 		<footer>
 			<section class="container">

@@ -3,4 +3,6 @@ $( document ).ready(function() {
     pagerCustom: '#bx-pager',
     options: 'fade'
   });
+  $('.bxslider-projects').bxSlider({
+  });
 });
