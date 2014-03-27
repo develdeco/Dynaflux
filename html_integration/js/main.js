@@ -1,7 +1,6 @@
 $( document ).ready(function() {
   $('.bxslider').bxSlider({
-    pagerCustom: '#bx-pager',
-    options: 'fade'
+    pagerCustom: '#bx-pager'
   });
   $('.bxslider-projects').bxSlider({
   });
