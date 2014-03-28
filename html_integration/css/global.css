@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 	background-color: transparent; 
 	color: #fff;
 }
-.bx-wrapper {
+.slider .bx-wrapper {
 	float: left;
 	width: 74%;
 }
@@ -87,16 +87,44 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 	
     display: inherit;
 }
+section h2{
+	text-align: center;
+	padding-top: 35px; 
+	padding-bottom: 15px;
+	color: #796161;
+	font-size: 26px;
+	background: url(../img/sub_title.png) no-repeat center bottom transparent;
+	font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
 .information-blocks{
 	clear: both;
 }
 .information-blocks .block{
 	text-align: center;
+	position: relative;
+	min-height: 220px;
 }
 .information-blocks .block-title{
 	color: #796161;
 	font-weight: normal;
 	font-size: 21px;
+}
+.information-blocks .block-button {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.latest-news li{
+	background: url(../img/cl.png) no-repeat left;
+	color: #d9d9da;
+	font-size: 15px;
+	padding-left: 25px;
+}
+.latest-news li a{
+	color: #5b0507;
+}
+.featured-products li{
+	list-style: none;
 }
 .prefooter{
 	background: #bcbdbf;
