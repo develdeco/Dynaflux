@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 	/*display: inline-block;*/
 	float: left;
 }		
-.header .social{
+.social{
 	float: right;
 	margin-top: 10px;
 }				
@@ -97,4 +97,32 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 	color: #796161;
 	font-weight: normal;
 	font-size: 21px;
+}
+.prefooter{
+	background: #bcbdbf;
+	background-image: -ms-linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
+	background-image: -moz-linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
+	background-image: -o-linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bcbdbf), color-stop(1, #aaabad));
+	background-image: -webkit-linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
+	background-image: linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcbdbf', endColorstr='#aaabad');
+	padding-top: 30px;
+}
+.prefooter .nav li a{
+	background: url(../img/cl.png) no-repeat left;
+	color: #d9d9da;
+	font-size: 15px;
+	padding-left: 25px;
+}
+.footer{
+	background: #999a9c;
+	padding: 50px 0;
+}
+footer .title{
+	text-align: center;
+	color: #fbebeb;
+	font-size: 21px;
+	text-transform: capitalize;
+	padding-left: 30px;
 }
