@@ -51,8 +51,8 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 .header-second .navbar-nav > li.active{
 	background: url(../img/franjaVert_seleccionado.png) repeat-x;
 }
-.header-second .navbar-nav > li:hover{
-	background: url(../img/franjaVert_seleccionado.png) repeat-x;
+.header-second .navbar-nav > li:hover a{
+	background: url(../img/franjaVert_seleccionado.png) 0 -1px repeat-x;
 }
 .header-second .navbar-nav > li a{
 	background: none;
@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
     display: inherit;
 }
 section h2{
+	text-transform: capitalize;
 	text-align: center;
 	padding-top: 35px; 
 	padding-bottom: 15px;
@@ -153,4 +154,101 @@ footer .title{
 	font-size: 21px;
 	text-transform: capitalize;
 	padding-left: 30px;
+}
+/*EQUIPMENT*/
+.accordion li.panel{
+	clear: both;
+	border-radius: 0;
+}
+.equipment li.product{
+	width: 230px;
+	text-align: center;
+	min-height: 210px;
+	padding: 10px;
+}
+.equipment li .product-image{
+	display: inline-block;
+	background-color: white;
+	border: 1px solid #d9d9d9;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px rgba(0,0,0,.3);
+	min-width: 180px;
+	padding: 12px;
+	min-height: 160px;
+}
+.equipment li .product-name{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+.accordion > ul,
+.accordion > ul li{
+	width: 100%;
+}
+.accordion .first-level > a{
+	background: url(../img/dynaflow-submenu-collapsed.png) no-repeat transparent;
+	padding: 5px 50px 18px ;
+	font-size: 18px;
+	color: #fff;
+	text-transform: capitalize;
+}
+.accordion .first-level > a.collapsed{
+	background: url(../img/dynaflow-08-02.png) no-repeat transparent;
+	padding: 5px 50px 18px ;
+	color: #94383A;
+}
+.accordion .panel{
+	margin-bottom: 0px;
+}
+.accordion .second-level a{
+	color: #777777;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: capitalize;
+	list-style-type: square;
+}
+.accordion .second-level > a{
+	color: #94383A;	
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 35px;
+}
+.accordion .second-level > a.collapsed{
+	color: #565656;
+}
+.accordion .second-level li a{
+	padding-left: 50px;
+}
+.accordion .first-level{
+	/*background: #DBDBDB;*/
+}
+.product-name a{
+	color: #893138;
+	font-size: 13px;
+	text-transform: capitalize;
+	background: url(../img/vineta_prod_app.png) no-repeat top left transparent;
+	padding-left: 28px;
+	padding-bottom: 5px;
+}
+/*TABS*/
+.nav-tabs > li > a{
+	background: #bcbdbf;
+	color: #fff;
+	font-weight: bold;
+}
+.nav-tabs > li.active > a{
+	background: #7c0406;
+	color: #fff;
+	font-weight: bold;
+}
+.equipment .nav > li > a:hover, 
+.equipment .nav > li > a:focus{
+	background: #ccc;
+}
+.tab-content > .active{
+	padding: 30px;
 }
