@@ -252,3 +252,22 @@ footer .title{
 .tab-content > .active{
 	padding: 30px;
 }
+/*PERSON*/
+.person .name{
+	color: #796161;
+	font-size: 25px;
+}
+.person .description{
+	color: #6f7072;
+	font-size: 13px;
+}
+.person .charge{
+	font-weight: bold;
+}
+.about-us ul{
+	margin-top: 50px;
+}
+li.person{
+	background: url(../img/divider3.png) center bottom no-repeat;
+	min-height: 230px;
+}
