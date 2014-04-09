@@ -11,9 +11,8 @@ class Base_Controller extends CI_Controller
         parent::__construct();
         self::$CI = &get_instance();
 
-        $this->config->load('project');
-        
-        date_default_timezone_set('America/Lima');
+        $this->load->library('alert');
+        $this->data['alerts'] = Alert::getAlerts();
 
         $this->data = array();
         $this->data['data_controller'] = '';
@@ -24,18 +23,12 @@ class Base_Controller extends CI_Controller
         $this->data['css_path'] = base_url('www/css');
         $this->data['js_path']  = base_url('www/js');
 
-        $public = $this->config->item('public');
-        $this->data['public'] = base_url('public').'/';
-        $this->data['public_img'] = base_url($public['images']).'/';
-        $this->data['public_files'] = base_url($public['files']).'/';
-
         require APPPATH.'entity/Product.php';
         require APPPATH.'entity/System.php';
         require APPPATH.'entity/Service.php';
         require APPPATH.'entity/News.php';
         require APPPATH.'entity/Project.php';
         require APPPATH.'entity/Location.php';
-        require APPPATH.'entity/Product.php';
     }
 
     /*
