@@ -45,8 +45,15 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 .social .nav > li > a:focus{
 	background-color: transparent;
 }
+nav .container-fluid{
+	padding: 0;
+}
+nav .container-fluid > div{
+	padding: 0;
+}
 .header-second .navbar-nav > li{
 	background: url(../img/franjaVert_deseleccionado.png) repeat-x;
+	width: 150px;
 }
 .header-second .navbar-nav > li.active{
 	background: url(../img/franjaVert_seleccionado.png) repeat-x;
@@ -69,6 +76,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 .navbar-default .navbar-nav > li > a{
 	text-transform: uppercase;
 	color: #fff;
+	text-align: center;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
@@ -76,16 +84,70 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web'; font-style: normal; font-
 	background-color: transparent; 
 	color: #fff;
 }
+.slider {
+	margin-top: 5px;
+	width: 100%;
+}
+section .slider{
+	/*background: url(../img/background-slide.png) no-repeat transparent;*/
+	display: inline-block;
+	background: #E9E9E9;
+	padding: 5px;
+}
 .slider .bx-wrapper {
 	float: left;
-	width: 74%;
+	width: 72%;
+	margin-bottom: 10px;
+}
+.slider .bxslider li{
+	left: 0px;
+}
+.slider .bx-wrapper .bx-viewport{
+	background: none;
+	box-shadow: none;
+	border: none;
+	left: inherit;
 }
 #bx-pager{
 	float: left;
+	height: 460px;
+	overflow: hidden;
+	background: #fff;
+	padding: 5px 0px 5px 0;
+	margin-left: 5px;
 }
 #bx-pager a{
-	
+	padding: 5px 0 5px 15px;
     display: inherit;
+    color: #8d2c2f;
+    font-family: 'Titillium Web';
+}
+#bx-pager a:hover{
+    background: url(../img/dynaflux-selected.png) no-repeat;
+}
+#bx-pager a span{
+	padding: 0 2px;
+}    
+#bx-pager a:hover span{
+	color: #fff;
+}
+.slider .buttons{
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	padding: 5px 0;
+}
+.slider .buttons a{
+	background: url(../img/slider-arrow-down.png) no-repeat;
+	padding: 5px;
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	cursor: pointer;
+}
+.slider .buttons a.next{
+	background: url(../img/slider-arrow-up.png) no-repeat;
+	margin-left: 5px;
 }
 section h2{
 	text-transform: capitalize;
@@ -93,12 +155,15 @@ section h2{
 	padding-top: 35px; 
 	padding-bottom: 15px;
 	color: #796161;
-	font-size: 26px;
+	font-size: 24px;
 	background: url(../img/sub_title.png) no-repeat center bottom transparent;
 	font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	margin-bottom: 35px;
+	font-weight: normal;
 }
 .information-blocks{
 	clear: both;
+	margin-bottom: 30px;
 }
 .information-blocks .block{
 	text-align: center;
@@ -109,23 +174,76 @@ section h2{
 	color: #796161;
 	font-weight: normal;
 	font-size: 21px;
+	margin-bottom: 15px;
+}
+.information-blocks .block-description{
+	margin-bottom: 40px;
 }
 .information-blocks .block-button {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 }
+.projects-finished .bx-wrapper .bx-viewport {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	background: #fff;
+}
+.projects-finished .bx-controls a{
+	top: 140%;
+	background: url(../img/fl.png) no-repeat;
+}
+.projects-finished .bx-controls a.bx-next{
+	background: url(../img/fm.png) no-repeat;
+}
+.projects-finished li{
+	font-size: 14px;
+}
+.projects-finished .project-title{
+	color: #796161;
+	font-size: 14px;
+	text-transform: capitalize;
+}
 .latest-news li{
-	background: url(../img/cl.png) no-repeat left;
+	/*background: url(../img/cl.png) no-repeat left;*/
+	background: url(../img/banr_noti.png) no-repeat;
 	color: #d9d9da;
 	font-size: 15px;
 	padding-left: 25px;
+	border: none;
+	border-radius: 0;
+	text-transform: capitalize;
+	margin-bottom: 5px;
 }
 .latest-news li a{
 	color: #5b0507;
 }
+.latest-news .news-date{
+	text-align: right;
+	margin-right: 20px;
+	font-size: 11px;
+	color: #5b4949;
+	margin-top: 15px;
+}
 .featured-products li{
 	list-style: none;
+}
+.featured-products li img{
+	border: 1px solid #d9d9d9;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+.featured-products .product-title{
+	margin: 10px 0;
+	font-size: 16px;
+	color: #796161;
+	font-weight: bold;
+}
+footer{
+	margin-top: 20px;
 }
 .prefooter{
 	background: #bcbdbf;
@@ -137,6 +255,7 @@ section h2{
 	background-image: linear-gradient(top, #bcbdbf 0%, #aaabad 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcbdbf', endColorstr='#aaabad');
 	padding-top: 30px;
+	padding-bottom: 30px;
 }
 .prefooter .nav li a{
 	background: url(../img/cl.png) no-repeat left;
@@ -146,7 +265,8 @@ section h2{
 }
 .footer{
 	background: #999a9c;
-	padding: 50px 0;
+	padding: 50px 0 0;
+	color: #fff;
 }
 footer .title{
 	text-align: center;
@@ -154,6 +274,12 @@ footer .title{
 	font-size: 21px;
 	text-transform: capitalize;
 	padding-left: 30px;
+}
+.footer-bottom{
+	text-align: center;
+	border-top: 1px dotted #fff;
+	padding: 10px 0;
+	margin-top: 10px;
 }
 /*EQUIPMENT*/
 .accordion li.panel{
@@ -185,21 +311,57 @@ footer .title{
 	overflow: hidden;
 	padding-bottom: 5px;
 }
+.accordion{
+	margin-top: 20px;
+}
+.accordion .nav{
+	list-style: inherit;
+}
 .accordion > ul,
 .accordion > ul li{
 	width: 100%;
+	background: #DBDBDB;
 }
 .accordion .first-level > a{
-	background: url(../img/dynaflow-submenu-collapsed.png) no-repeat transparent;
-	padding: 5px 50px 18px ;
+	background: url(../img/accordion-close.png) no-repeat 20px 10px #762426;
+	/*background: #762426;*/
+	padding: 15px 0px 15px 65px;
 	font-size: 18px;
 	color: #fff;
 	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+.accordion .first-level > a:after {
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 13px solid transparent;
+	border-right: 13px solid transparent;
+	border-top: 10px solid #762426;
+	position: absolute;
+	left: 24px;
+	top: 50px;
+}
+.accordion .first-level > a.collapsed:after {
+	content: none;
+}
+.accordion li > a:hover, 
+.accordion li > a:focus{
+	background-color: inherit;
+}
+.accordion li.first-level > a:hover, 
+.accordion li.first-level > a:focus{
+	background-color: #762426;
+}
+.accordion li.first-level > a.collapsed:hover, 
+.accordion li.first-level > a.collapsed:focus{
+	background-color: #ccc;
 }
 .accordion .first-level > a.collapsed{
-	background: url(../img/dynaflow-08-02.png) no-repeat transparent;
-	padding: 5px 50px 18px ;
+	/*background: url(../img/dynaflow-08-02.png) no-repeat transparent;*/
+	background: url(../img/accordion-open.png) no-repeat 20px 10px #ccc;
 	color: #94383A;
+	margin: 0;
 }
 .accordion .panel{
 	margin-bottom: 0px;
@@ -210,18 +372,27 @@ footer .title{
 	font-size: 14px;
 	text-transform: capitalize;
 	list-style-type: square;
+	padding: 5px 0px;
 }
 .accordion .second-level > a{
 	color: #94383A;	
 	font-weight: bold;
 	font-size: 16px;
-	padding-left: 35px;
+	margin-left: 35px;
+	display: list-item;
+	list-style-type: circle;
 }
 .accordion .second-level > a.collapsed{
 	color: #565656;
 }
 .accordion .second-level li a{
-	padding-left: 50px;
+	margin-left: 50px;
+	display: list-item;
+	list-style-type: square;
+	list-style-c
+}
+.accordion .third-level li a{
+	margin-left: 70px;
 }
 .accordion .first-level{
 	/*background: #DBDBDB;*/
@@ -251,6 +422,32 @@ footer .title{
 }
 .tab-content > .active{
 	padding: 30px;
+}
+.tab-content ul{
+	padding-left: 0;
+}
+.tab-content li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.tab-content li a{
+	color: #000;
+	text-decoration: none;
+}
+.tab-content li.brochure a{
+	background: url(../img/pdf-icon.png) no-repeat;
+	padding-left: 30px;
+}
+.tab-content li.manual a{
+	background: url(../img/pdf-icon-black.png) no-repeat;
+	padding-left: 30px;
+}
+#brochure h2{
+	text-align: left;
+	background: none;
+	text-decoration: underline;
+	margin: 0;
+	font-size: 16px;
 }
 /*PERSON*/
 .person .name{
@@ -293,18 +490,51 @@ li.person{
 	padding: 5px;
 	padding-bottom: 0px;
 }
-td.panel a.collapsed{
+td.panel a.collapsed img{
 	/*background: none;*/
 	border: none;
 }
+td.panel a img{
+	/*border: 2px solid #000;
+	border-radius: 5px;*/
+}
 td.panel a{
 	/*background: #ccc;*/
-	border: 1px solid #ccc;
 	display: block;
 	padding: 20px 0;
-	border-radius: 5px;
 	text-decoration: none;
+}
+.service td a{
+	background: #ccc;
+	border: 1px solid #000;
+	border-bottom: none;
+}
+.service td a.collapsed{
+	background: transparent;
+	border: none;
 }
 .service.tabs td.panel a.collapsed .name{
 	color: #796161;
 }	
+.service.tabs .tab-content{
+	min-height: 150px;
+	padding-top: 0;
+}
+.service.tabs .tab-content.collapsing{
+	position: absolute;
+	/*min-height: 150px;*/
+}
+.service.tabs .inner{
+	background: #ccc;
+}
+.service.tabs .tab-content.collapsing .inner{
+	background: transparent;
+}
+.service.tabs .inner,
+.service.tabs .tab-content.collapsing .inner{
+	position: absolute;
+	width: 80.7%;
+	padding: 20px 100px;
+	min-height: 149px;
+	left: 9.7%;
+}
