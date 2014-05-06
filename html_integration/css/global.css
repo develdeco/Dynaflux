@@ -207,7 +207,6 @@ section h2{
 	text-transform: capitalize;
 }
 .latest-news li{
-	/*background: url(../img/cl.png) no-repeat left;*/
 	background: url(../img/banr_noti.png) no-repeat;
 	color: #d9d9da;
 	font-size: 15px;
@@ -217,8 +216,35 @@ section h2{
 	text-transform: capitalize;
 	margin-bottom: 5px;
 }
+.news .latest-news{
+	margin-top: 50px;
+	overflow-y: scroll;
+	width: 300px;
+	max-height: 500px;
+}
+.news .latest-news li{
+	background: url(../img/banr_noti_big.png) no-repeat;
+	width: 267px;
+}
+.news .list-group-item.active{
+	background-image: linear-gradient(to bottom, #7c0406 0%, #7c0406 100%);
+	text-shadow: none;
+}
+.news .list-group-item.active a{
+	color: #fff;
+}
+.news .list-group-item.active .news-date{
+	color: #fff;
+}
 .latest-news li a{
 	color: #5b0507;
+}
+.news .latest-news li a{
+	max-width: 260px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inherit;
 }
 .latest-news .news-date{
 	text-align: right;
@@ -539,4 +565,15 @@ td.panel a{
 	min-height: 149px;
 	/*left: 9.7%;*/
 	left: 6%;
+}
+/*Pagina Noticias*/
+.news-detail .news-images{
+
+	overflow-x: scroll;
+}
+.news-images ul{
+	width: 2000px;
+}
+.news-images li{
+	float: left;
 }
