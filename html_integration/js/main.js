@@ -20,4 +20,17 @@ $( document ).ready(function() {
 		force:true, // Force a scroll to the element specified by 'start' (some browsers don't reset on refreshes)
 		step:1 // How many items to scroll each time ( 1 is the default, no need to specify )
 	});
+
+  function initialize() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+      center: new google.maps.LatLng(44.5403, -78.5463),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(map_canvas, map_options)
+  }
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+
 });
