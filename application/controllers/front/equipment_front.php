@@ -1,19 +1,9 @@
 <?php
 
-class Equipos_front extends Front_Controller
+class Equipment_front extends Front_Controller
 {
-	function home()
+	function view($id_equipment)
 	{
-		$this->load->view('front/home')
+		
 	}	
-
-	function contact()
-	{
-		$this->load->view('front/contact')
-	}
-
-	function news($id)
-	{
-		$this->load->view('front/news')
-	}
 }

@@ -372,6 +372,11 @@ function __autoload($class)
     {
         @include_once( APPPATH . 'core/'. $class . EXT );
     }
+
+    if(strpos($class, 'Entity') === true)
+    {
+    	@include_once( APPPATH . 'entities/'. $class . EXT );
+    }
 }
 
 

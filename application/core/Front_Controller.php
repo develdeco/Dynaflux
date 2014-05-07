@@ -6,8 +6,8 @@ class Front_Controller extends Base_Controller
     {
         parent::__construct();
 
-        $this->quilt_context->init(Quilt_context::FRONT_OFFICE);
-        $this->quilt_context->setShopContext(false);
+        $this->context->init(Context::FRONT_OFFICE);
+        $this->context->setShopContext(false);
         $this->data["ajax"] = false;
     }
 
@@ -16,12 +16,12 @@ class Front_Controller extends Base_Controller
         //we now just use the url
         $args = explode("/", uri_string());
 
-        $this->quilt_context->setLangContext(LANGUE_DU_SITE);
-        $this->quilt_context->setMagazineContext('');
-        $this->quilt_context->setParamsUrlContext('');
-        $this->quilt_context->setParamsListContext(array());
+        $this->context->setLangContext(LANGUE_DU_SITE);
+        $this->context->setMagazineContext('');
+        $this->context->setParamsUrlContext('');
+        $this->context->setParamsListContext(array());
 
-        if($this->quilt_context->getLangContext() == 'fr')
+        if($this->context->getLangContext() == 'fr')
         {
             setlocale(LC_ALL, 'fr_FR.UTF-8');
             $this->lang->load('quiltmania', 'french');
@@ -41,7 +41,7 @@ class Front_Controller extends Base_Controller
         if(!count($args) || empty($args[0]))
         {
             $this->data['magazine'] = 'quiltmania';
-            $this->quilt_context->setMagazineContext('quiltmania');
+            $this->context->setMagazineContext('quiltmania');
             return;
         }
 
@@ -66,22 +66,22 @@ class Front_Controller extends Base_Controller
             if(in_array($m, $prestashopCategories))
             {
                 $this->data['magazine'] = $m;
-                $this->quilt_context->setMagazineContext($m);      
+                $this->context->setMagazineContext($m);      
             }
             elseif($m=="patchwork")
             {
                 $this->data['magazine'] = 'quiltmania';
-                $this->quilt_context->setMagazineContext('quiltmania');      
+                $this->context->setMagazineContext('quiltmania');      
             }
             elseif($m=="simply-vintage")
             {
                 $this->data['magazine'] = 'simply_vintage';
-                $this->quilt_context->setMagazineContext('simply_vintage');      
+                $this->context->setMagazineContext('simply_vintage');      
             }
             elseif($m=="carnets-de-scrap")
             {
                 $this->data['magazine'] = 'carnet_de_scrap';
-                $this->quilt_context->setMagazineContext('carnet_de_scrap');  
+                $this->context->setMagazineContext('carnet_de_scrap');  
             }
             else
             {
@@ -90,7 +90,7 @@ class Front_Controller extends Base_Controller
         }
 
         $params = implode('/', $params);
-        $this->quilt_context->setParamsUrlContext($params);
+        $this->context->setParamsUrlContext($params);
     }
 
 }

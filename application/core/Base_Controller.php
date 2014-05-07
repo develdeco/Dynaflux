@@ -23,12 +23,7 @@ class Base_Controller extends CI_Controller
         $this->data['css_path'] = base_url('www/css');
         $this->data['js_path']  = base_url('www/js');
 
-        require APPPATH.'entity/Product.php';
-        require APPPATH.'entity/System.php';
-        require APPPATH.'entity/Service.php';
-        require APPPATH.'entity/News.php';
-        require APPPATH.'entity/Project.php';
-        require APPPATH.'entity/Location.php';
+        require APPPATH.'entities/Entity.php';
     }
 
     /*
