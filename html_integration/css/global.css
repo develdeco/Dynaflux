@@ -609,6 +609,7 @@ td.panel a{
 	z-index: -1;
 	top: 150px;
 	left: 9px;
+	height: 1px;
 }
 .news-images .buttons span{
 	height: 10px;
