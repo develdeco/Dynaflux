@@ -87,12 +87,19 @@ nav .container-fluid > div{
 .slider {
 	margin-top: 5px;
 	width: 100%;
+	position: relative;
+}
+.slider #bx-pager img{
+	width: 130px;
+	height: 94px;
 }
 section .slider{
 	/*background: url(../img/background-slide.png) no-repeat transparent;*/
 	display: inline-block;
 	background: #E9E9E9;
 	padding: 5px;
+	height: 470px;
+	margin-bottom: 30px;
 }
 .slider .bx-wrapper {
 	float: left;
@@ -102,6 +109,20 @@ section .slider{
 .slider .bxslider li{
 	left: 0px;
 }
+.slider .bxslider li span{
+	position: absolute;
+	z-index: 60;
+	display: block;
+	width: 100%;
+	bottom: 0;
+	color: #fff;
+	height: 76px;
+	background: rgba(255,255,255,0.5);
+	text-align: right;
+	padding-right: 27px;
+	text-transform: capitalize;
+	font-size: 22px;
+}
 .slider .bx-wrapper .bx-viewport{
 	background: none;
 	box-shadow: none;
@@ -110,11 +131,12 @@ section .slider{
 }
 #bx-pager{
 	float: left;
-	height: 460px;
+	height: 422px;
 	overflow: hidden;
 	background: #fff;
 	padding: 5px 0px 5px 0;
 	margin-left: 5px;
+	width: 27.5%;
 }
 #bx-pager a{
 	padding: 5px 0 5px 15px;
@@ -136,6 +158,9 @@ section .slider{
 	width: 100%;
 	text-align: right;
 	padding: 5px 0;
+	position: absolute;
+	right: 12px;
+	bottom: 0;
 }
 .slider .buttons a{
 	background: url(../img/slider-arrow-down.png) no-repeat;
@@ -160,6 +185,9 @@ section h2{
 	font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	margin-bottom: 35px;
 	font-weight: normal;
+}
+.news section h2{
+	margin-bottom: 10px;
 }
 .information-blocks{
 	clear: both;
@@ -568,16 +596,37 @@ td.panel a{
 }
 /*Pagina Noticias*/
 .news-detail .news-images{
-
-	overflow-x: scroll;
+	overflow: hidden;
+	margin-left: 25px;
 }
 .news-images ul{
-	width: 835px;
+	width: 1835px;
+	/*overflow: hidden;*/
+}
+.news-images .buttons{
+	position: absolute;
+	width: 101%;
+	z-index: -1;
+	top: 150px;
+	left: 9px;
+	height: 1px;
+}
+.news-images .buttons span{
+	height: 10px;
+	background: url(../img/fl.png) no-repeat;
+	display: inline-block;
+	width: 10px;
+	cursor: pointer;
+	padding: 15px;
+}
+.news-images .buttons span.next{
+	float: right;
+	background: url(../img/fm.png) no-repeat;
 }
 .news-images li{
 	float: left;
-	border: 1px solid #ccc;
-	margin-left: 10px;
+	border: 3px solid #ccc;
+	margin-left: 5px;
 }
 .news-images .nav > li > a:hover, 
 .news-images .nav > li > a:focus {
