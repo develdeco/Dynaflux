@@ -637,6 +637,9 @@ td.panel a{
 .contact-detail{
 	margin-top: 50px;
 }
+.contact-detail{
+	margin-top: 100px;
+}
 #map_canvas {
     width: 100%;
 	height: 570px;
