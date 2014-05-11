@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="css/vendor/bootstrap-theme.css" />
 	<link href="js/vendor/bxslider/jquery.bxslider.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/global.css" />
-	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script src="js/vendor/jquery.scrollTo.min.js"></script>
@@ -64,14 +64,14 @@
 					<div class="tab-content">
 					  <div class="tab-pane active" id="oficinas">
 					  	<ul class="nav">
-							<li class="office" onClick="codeAddress();">
+							<li class="office 1" val="325, Las Cascadas, La Molina" onClick="codeAddress(this);">
 								<ul>
 									<li class="office-title">sede central</li>
 									<li class="office-address">Calle Las Cascadas 325, Urb. La Encalada - La Molina</li>
 									<li class="office-phone">(01) 361 6868</li>
 								</ul>
 							</li>
-							<li class="office">
+							<li class="office 2" val="2964, Separadora Industrial, Ate" onClick="codeAddress(this);">
 								<ul>
 									<li class="office-title">Área Técnica e Ingenieria</li>
 									<li class="office-address">Av. Separadora Industrial 2964 - Ate</li>
