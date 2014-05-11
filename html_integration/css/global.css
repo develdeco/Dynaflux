@@ -676,4 +676,13 @@ td.panel a{
 	color: #fff;
 	font-size: 16px;
 	text-transform: capitalize;
+	cursor: pointer;
+}
+#map_canvas.throbber:after{
+	content: '';
+	background: url(../img/Spinning_wheel_throbber.gif) no-repeat #fff 50%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ccc;
 }

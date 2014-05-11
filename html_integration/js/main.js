@@ -48,19 +48,15 @@ $( document ).ready(function() {
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 
-  
-  console.log('holas');
-  // $('li.office').click(function(){
-
-  // });
 });
 var geocoder;
   var map;
 function codeAddress(e) {
+    var throbber = document.getElementById("map_canvas");
+    throbber.className = throbber.className + " throbber";
+
+    setInterval(function(){throbber.className = ""; throbber.className = "tab-pane active";},500);
     var address = e.getAttribute("val");
-    console.log(e);
-    console.log(address);
-    // var address = 'Las Cascadas 325, La Molina';
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
