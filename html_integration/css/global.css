@@ -560,9 +560,10 @@ td.panel a{
 }
 .service td a{
 	background: #ccc;
-	border: 1px solid #000;
 	border-bottom: none;
 	width: 250px;
+	z-index: 1;
+	position: relative;
 }
 .service td a.collapsed{
 	background: transparent;
@@ -588,11 +589,12 @@ td.panel a{
 .service.tabs .inner,
 .service.tabs .tab-content.collapsing .inner{
 	position: absolute;
-	width: 80.7%;
-	padding: 20px 100px;
+	width: 68.8%;
+	padding: 50px 100px;
 	min-height: 149px;
-	/*left: 9.7%;*/
-	left: 6%;
+	left: 11.7%;
+	margin-top: -1px;
+	z-index: 0;
 }
 /*Pagina Noticias*/
 .news-detail .news-images{
