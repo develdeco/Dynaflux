@@ -1,6 +1,6 @@
 <?php
 
-class SlideItem extends Entity
+class SlideItem
 {
 	var $id_slideitem;
 	var $title;

@@ -1,6 +1,6 @@
 <?php
 
-class Project extends Entity
+class Project
 {
 	var $id_project;
 	var $name;

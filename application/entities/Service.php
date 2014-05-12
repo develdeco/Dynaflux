@@ -1,6 +1,6 @@
 <?php
 
-class Service extends Entity
+class Service
 {
 	var $id_service;
 	var $name;

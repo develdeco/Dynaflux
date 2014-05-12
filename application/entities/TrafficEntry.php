@@ -1,6 +1,6 @@
 <?php
 
-class TrafficEntry extends Entity
+class TrafficEntry
 {
 	var $id_trafficentry;
 	var $ip;

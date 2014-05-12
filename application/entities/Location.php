@@ -1,6 +1,6 @@
 <?php
 
-class Location extends Entity
+class Location
 {
 	var $id_location;
 	var $name;

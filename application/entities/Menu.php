@@ -1,6 +1,6 @@
 <?php
 
-class Menu extends Entity
+class Menu
 {
 	var $id_menu;
 	var $name;

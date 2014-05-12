@@ -1,6 +1,6 @@
 <?php
 
-class Product extends Entity
+class Product
 {
 	var $id_product;
 	var $title;

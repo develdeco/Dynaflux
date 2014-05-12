@@ -1,6 +1,6 @@
 <?php
 
-class EntityCreation extends Entity
+class EntityCreation
 {
 	var $id_entitycreation;
 	var $entiy_id;

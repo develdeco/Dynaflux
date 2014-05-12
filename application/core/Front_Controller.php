@@ -93,4 +93,10 @@ class Front_Controller extends Base_Controller
         $this->context->setParamsUrlContext($params);
     }
 
+    function loadView($view)
+    {
+        $this->load->view('front/common/header');
+        $this->load->view('front/'.$view);
+        $this->load->view('front/common/footer');
+    }
 }

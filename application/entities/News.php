@@ -1,12 +1,12 @@
 <?php 
 
-class News extends Entity
+class News
 {
 	var $id_new;
 	var $title;
 	var $content;
 	var $date;
-
+	
 	var $images;
 
 	public function getId_new()
