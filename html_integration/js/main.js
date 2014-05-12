@@ -35,21 +35,29 @@ $( document ).ready(function() {
     $(this).colorbox({href: $(this).attr('src')});
   });
   
-  var geocoder;
-  var map;
+  
   function initialize() {
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(-12.10092, -76.948071);
     var mapOptions = {
-      zoom: 8,
+      zoom: 16,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
   }
+  google.maps.event.addDomListener(window, 'load', initialize);
 
-  function codeAddress() {
-    var address = 'Calle Las Cascadas 325, Urb. La Encalada - La Molina';
+});
+var geocoder;
+  var map;
+function codeAddress(e) {
+    var throbber = document.getElementById("map_canvas");
+    throbber.className = throbber.className + " throbber";
+
+    setInterval(function(){throbber.className = "";},500);
+    var address = e.getAttribute("val");
+
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
@@ -62,6 +70,3 @@ $( document ).ready(function() {
       }
     });
   }
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-});
