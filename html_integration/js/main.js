@@ -5,7 +5,7 @@ $( document ).ready(function() {
     captions: true,
     auto: true
   });
-
+  
   $('.bxslider-projects').bxSlider({
   	pager: false,
   	auto: true
@@ -50,7 +50,7 @@ $( document ).ready(function() {
 
 });
 var geocoder;
-  var map;
+var map;
 function codeAddress(e) {
     var throbber = document.getElementById("map_canvas");
     throbber.className = throbber.className + " throbber";
@@ -58,7 +58,7 @@ function codeAddress(e) {
     setInterval(function(){throbber.className = "";},500);
     var address = e.getAttribute("val");
 
-    geocoder.geocode( { 'address': address}, function(results, status) {
+    geocoder.geocode( { 'address': address }, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({

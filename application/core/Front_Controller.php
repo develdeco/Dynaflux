@@ -9,6 +9,14 @@ class Front_Controller extends Base_Controller
         $this->context->init(Context::FRONT_OFFICE);
         $this->context->setShopContext(false);
         $this->data["ajax"] = false;
+
+        $this->load->model('entity_model');
+        $this->load->model('traffic_model');
+        $this->load->model('menu_model');
+
+        $this->data['most_viewed'] = $this->traffic_model->get_most_viewed();
+        $this->data['recently_viewed'] = $this->entity_model->get_recently_viewed();
+        $this->data['top_menu'] = $this->menu_model->get_full_menu('top');
     }
 
     function setContext($args = array())
@@ -93,10 +101,12 @@ class Front_Controller extends Base_Controller
         $this->context->setParamsUrlContext($params);
     }
 
-    function loadView($view)
+    function loadView($view, $data = array())
     {
-        $this->load->view('front/common/header');
-        $this->load->view('front/'.$view);
-        $this->load->view('front/common/footer');
+        $data = !empty($data) ? $data : $this->data;
+
+        $this->load->view('front/common/header', $data);
+        $this->load->view('front/'.$view, $data);
+        $this->load->view('front/common/footer', $data);
     }
 }

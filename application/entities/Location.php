@@ -7,6 +7,7 @@ class Location
 	var $latitude;
 	var $longitude;
 	var $address;
+	var $phone;
 
 	public function getId_location()
 	{
@@ -56,5 +57,15 @@ class Location
 	public function setAddress($address)
 	{
 	    $this->address = $address;
+	}
+
+	public function getPhone()
+	{
+	    return $this->phone;
+	}
+	
+	public function setPhone($phone)
+	{
+	    $this->phone = $phone;
 	}
 }
