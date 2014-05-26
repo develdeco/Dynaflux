@@ -2,20 +2,20 @@
 
 class Menu
 {
-	var $id_menu;
+	var $idMenu;
 	var $name;
 	var $description;
 
 	var $items;
 
-	public function getId_menu()
+	public function getIdMenu()
 	{
-	    return $this->id_menu;
+	    return $this->idMenu;
 	}
 	
-	public function setId_menu($id_menu)
+	public function setIdMenu($idMenu)
 	{
-	    $this->id_menu = $id_menu;
+	    $this->idMenu = $idMenu;
 	}
 
 	public function getName()

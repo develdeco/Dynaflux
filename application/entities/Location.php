@@ -2,21 +2,21 @@
 
 class Location
 {
-	var $id_location;
+	var $idLocation;
 	var $name;
 	var $latitude;
 	var $longitude;
 	var $address;
 	var $phone;
 
-	public function getId_location()
+	public function getIdLocation()
 	{
-	    return $this->id_location;
+	    return $this->idLocation;
 	}
 	
-	public function setId_location($id_location)
+	public function setIdLocation($idLocation)
 	{
-	    $this->id_location = $id_location;
+	    $this->idLocation = $idLocation;
 	}
 
 	public function getName()

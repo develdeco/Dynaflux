@@ -2,52 +2,52 @@
 
 class EntityCreation
 {
-	var $id_entitycreation;
-	var $entiy_id;
-	var $entity_type;
-	var $entity_title;
+	var $idEntityCreation;
+	var $EntityId;
+	var $EntityType;
+	var $EntityTitle;
 	var $date;
 
-	public function getId_entitycreation()
+	public function getIdEntityCreation()
 	{
-	    return $this->id_entitycreation;
+	    return $this->idEntityCreation;
 	}
 	
-	public function setId_entitycreation($id_entitycreation)
+	public function setIdEntityCreation($idEntityCreation)
 	{
-	    $this->id_entitycreation = $id_entitycreation;
+	    $this->idEntityCreation = $idEntityCreation;
 	}
 
-	public function getEntiy_id()
+	public function getEntityId()
 	{
-	    return $this->entiy_id;
+	    return $this->EntityId;
 	}
 	
-	public function setEntiy_id($entiy_id)
+	public function setEntityId($EntityId)
 	{
-	    $this->entiy_id = $entiy_id;
+	    $this->EntityId = $EntityId;
 	}
 
-	public function getEntity_type()
+	public function getEntityType()
 	{
-	    return $this->entity_type;
+	    return $this->EntityType;
 	}
 	
-	public function setEntity_type($entity_type)
+	public function setEntityType($EntityType)
 	{
-	    $this->entity_type = $entity_type;
+	    $this->EntityType = $EntityType;
 	}
 
-	public function getEntity_title()
+	public function getEntityTitle()
 	{
-	    return $this->entity_title;
+	    return $this->EntityTitle;
 	}
 	
-	public function setEntity_title($entity_title)
+	public function setEntityTitle($EntityTitle)
 	{
-	    $this->entity_title = $entity_title;
+	    $this->EntityTitle = $EntityTitle;
 	}
-
+	
 	public function getDate()
 	{
 	    return $this->date;

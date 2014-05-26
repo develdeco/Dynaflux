@@ -2,18 +2,18 @@
 
 class Image
 {
-	var $id_image;
+	var $idImage;
 	var $path;
 	var $name;
 
-	public function getId_image()
+	public function getIdImage()
 	{
-	    return $this->id_image;
+	    return $this->idImage;
 	}
 	
-	public function setId_image($id_image)
+	public function setIdImage($idImage)
 	{
-	    $this->id_image = $id_image;
+	    $this->idImage = $idImage;
 	}
 
 	public function getPath()

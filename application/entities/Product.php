@@ -2,7 +2,7 @@
 
 class Product
 {
-	var $id_product;
+	var $idProduct;
 	var $title;
 	var $description;
 	var $type;
@@ -12,14 +12,14 @@ class Product
 	var $manuales;
 	var $brochures;
 
-	public function getId_product()
+	public function getIdProduct()
 	{
-	    return $this->id_product;
+	    return $this->idProduct;
 	}
 	
-	public function setId_product($id_product)
+	public function setIdProduct($idProduct)
 	{
-	    $this->id_product = $id_product;
+	    $this->idProduct = $idProduct;
 	}
 
 	public function getTitle()

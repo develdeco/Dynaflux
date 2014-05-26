@@ -2,30 +2,30 @@
 
 class CategoryItem
 {
-	var $id_categoryitem;
-	var $id_category;
+	var $idEntity;
+	var $idCategory;
 	var $name;
 	var $level;
-	var $id_parent;
-
-	public function getId_categoryitem()
+	var $idParent;
+	
+	public function getIdEntity()
 	{
-	    return $this->id_categoryitem;
+	    return $this->idEntity;
 	}
 	
-	public function setId_categoryitem($id_categoryitem)
+	public function setIdEntity($idEntity)
 	{
-	    $this->id_categoryitem = $id_categoryitem;
+	    $this->idEntity = $idEntity;
 	}
 
-	public function getId_category()
+	public function getIdCategory()
 	{
-	    return $this->id_category;
+	    return $this->idCategory;
 	}
 	
-	public function setId_category($id_category)
+	public function setIdCategory($idCategory)
 	{
-	    $this->id_category = $id_category;
+	    $this->idCategory = $idCategory;
 	}
 
 	public function getName()
@@ -48,13 +48,13 @@ class CategoryItem
 	    $this->level = $level;
 	}
 
-	public function getId_parent()
+	public function getIdParent()
 	{
-	    return $this->id_parent;
+	    return $this->idParent;
 	}
 	
-	public function setId_parent($id_parent)
+	public function setIdParent($idParent)
 	{
-	    $this->id_parent = $id_parent;
+	    $this->idParent = $idParent;
 	}
 }

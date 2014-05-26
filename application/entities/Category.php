@@ -2,18 +2,17 @@
 
 class Category
 {
-	var $id_category;
+	var $idEntity;
 	var $name;
-	var $id_name;
 
-	public function getId_category()
+	public function getIdEntity()
 	{
-	    return $this->id_category;
+	    return $this->idEntity;
 	}
 	
-	public function setId_category($id_category)
+	public function setIdEntity($idEntity)
 	{
-	    $this->id_category = $id_category;
+	    $this->idEntity = $idEntity;
 	}
 
 	public function getName()
@@ -24,15 +23,5 @@ class Category
 	public function setName($name)
 	{
 	    $this->name = $name;
-	}
-
-	public function getId_name()
-	{
-	    return $this->id_name;
-	}
-	
-	public function setId_name($id_name)
-	{
-	    $this->id_name = $id_name;
 	}
 }

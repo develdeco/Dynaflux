@@ -2,21 +2,21 @@
 
 class News
 {
-	var $id_new;
+	var $idNews;
 	var $title;
 	var $content;
 	var $date;
 	
 	var $images;
 
-	public function getId_new()
+	public function getIdNews()
 	{
-	    return $this->id_new;
+	    return $this->idNews;
 	}
 	
-	public function setId_new($id_new)
+	public function setIdNews($idNews)
 	{
-	    $this->id_new = $id_new;
+	    $this->idNews = $idNews;
 	}
 
 	public function getTitle()

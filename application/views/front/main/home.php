@@ -80,7 +80,7 @@
 			<?php foreach($products as $product): ?>
 			<li class="col-md-6">
 				<div class="products-image">
-					<a href="<?php echo href($product->getId_product(), 'product') ?>">
+					<a href="<?php echo href($product->getIdProduct(), 'product') ?>">
 						<img src="<?php echo public_url($product->getImage()) ?>" alt="<?php echo $product->getTitle() ?>">
 					</a>
 				</div>

@@ -2,24 +2,44 @@
 
 class SlideItem
 {
-	var $id_slideitem;
+	var $idSlideItem;
+	var $ReferenceId;
+	var $ReferenceType;
 	var $title;
-	var $reference_id;
-	var $reference_type;
 
 	var $largeImage;
 	var $smallImage;
 
-	public function getId_slideitem()
+	public function getIdSlideItem()
 	{
-	    return $this->id_slideitem;
+	    return $this->idSlideItem;
 	}
 	
-	public function setId_slideitem($id_slideitem)
+	public function setIdSlideItem($idSlideItem)
 	{
-	    $this->id_slideitem = $id_slideitem;
+	    $this->idSlideItem = $idSlideItem;
 	}
 
+	public function getReferenceId()
+	{
+	    return $this->ReferenceId;
+	}
+	
+	public function setReferenceId($ReferenceId)
+	{
+	    $this->ReferenceId = $ReferenceId;
+	}
+
+	public function getReferenceType()
+	{
+	    return $this->ReferenceType;
+	}
+	
+	public function setReferenceType($ReferenceType)
+	{
+	    $this->ReferenceType = $ReferenceType;
+	}
+	
 	public function getTitle()
 	{
 	    return $this->title;
@@ -28,36 +48,6 @@ class SlideItem
 	public function setTitle($title)
 	{
 	    $this->title = $title;
-	}
-
-	public function getReference_id()
-	{
-	    return $this->reference_id;
-	}
-	
-	public function setReference_id($reference_id)
-	{
-	    $this->reference_id = $reference_id;
-	}
-
-	public function getReference_type()
-	{
-	    return $this->reference_type;
-	}
-	
-	public function setReference_type($reference_type)
-	{
-	    $this->reference_type = $reference_type;
-	}
-
-	public function getId_image()
-	{
-	    return $this->id_image;
-	}
-	
-	public function setId_image($id_image)
-	{
-	    $this->id_image = $id_image;
 	}
 
 	public function getLargeImage()

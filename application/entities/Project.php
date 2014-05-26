@@ -2,21 +2,21 @@
 
 class Project
 {
-	var $id_project;
+	var $idProject;
 	var $name;
 	var $description;
 	var $state;
 
 	var $images;
 
-	public function getId_project()
+	public function getIdProject()
 	{
-	    return $this->id_project;
+	    return $this->idProject;
 	}
 	
-	public function setId_project($id_project)
+	public function setIdProject($idProject)
 	{
-	    $this->id_project = $id_project;
+	    $this->idProject = $idProject;
 	}
 
 	public function getName()

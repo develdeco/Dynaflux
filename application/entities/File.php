@@ -2,19 +2,19 @@
 
 class File
 {
-	var $id_file;
+	var $idFile;
 	var $path;
 	var $name;
 	var $type;
 
-	public function getId_file()
+	public function getIdFile()
 	{
-	    return $this->id_file;
+	    return $this->idFile;
 	}
 	
-	public function setId_file($id_file)
+	public function setIdFile($idFile)
 	{
-	    $this->id_file = $id_file;
+	    $this->idFile = $idFile;
 	}
 
 	public function getPath()

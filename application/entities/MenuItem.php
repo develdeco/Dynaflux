@@ -2,9 +2,9 @@
 
 class MenuItem
 {
-	var $id_item;
-	var $id_menu;
-	var $id_parent;
+	var $idItem;
+	var $idMenu;
+	var $idParent;
 	var $name;
 	var $level;
 	var $type;
@@ -12,36 +12,36 @@ class MenuItem
 	
 	var $items;
 
-	public function getId_item()
+	public function getIdItem()
 	{
-	    return $this->id_item;
+	    return $this->idItem;
 	}
 	
-	public function setId_item($id_item)
+	public function setIdItem($idItem)
 	{
-	    $this->id_item = $id_item;
+	    $this->idItem = $idItem;
 	}
 
-	public function getId_menu()
+	public function getIdMenu()
 	{
-	    return $this->id_menu;
+	    return $this->idMenu;
 	}
 	
-	public function setId_menu($id_menu)
+	public function setIdMenu($idMenu)
 	{
-	    $this->id_menu = $id_menu;
+	    $this->idMenu = $idMenu;
 	}
 
-	public function getId_parent()
+	public function getIdParent()
 	{
-	    return $this->id_parent;
+	    return $this->idParent;
 	}
 	
-	public function setId_parent($id_parent)
+	public function setIdParent($idParent)
 	{
-	    $this->id_parent = $id_parent;
+	    $this->idParent = $idParent;
 	}
-
+	
 	public function getName()
 	{
 	    return $this->name;

@@ -2,20 +2,20 @@
 
 class Service
 {
-	var $id_service;
+	var $idService;
 	var $name;
 	var $description;
 
 	var $icon;
 
-	public function getId_service()
+	public function getIdService()
 	{
-	    return $this->id_service;
+	    return $this->idService;
 	}
 	
-	public function setId_service($id_service)
+	public function setIdService($idService)
 	{
-	    $this->id_service = $id_service;
+	    $this->idService = $idService;
 	}
 
 	public function getName()
