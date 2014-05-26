@@ -90,8 +90,9 @@ nav .container-fluid > div{
 	position: relative;
 }
 .slider #bx-pager img{
-	width: 130px;
-	height: 94px;
+width: 125px;
+height: 94px;
+padding-top: 5px;
 }
 section .slider{
 	/*background: url(../img/background-slide.png) no-repeat transparent;*/
@@ -134,7 +135,7 @@ section .slider{
 	height: 422px;
 	overflow: hidden;
 	background: #fff;
-	padding: 5px 0px 5px 0;
+	padding: 0px 0px 5px 0;
 	margin-left: 5px;
 	width: 27.5%;
 }
@@ -211,6 +212,7 @@ section h2{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	left: 0%;
 }
 .projects-finished .bx-wrapper .bx-viewport {
 	-moz-box-shadow: none;
@@ -316,6 +318,9 @@ footer{
 	color: #d9d9da;
 	font-size: 15px;
 	padding-left: 25px;
+}
+.prefooter .nav li a:hover {
+	background-color: #ccc;
 }
 .footer{
 	background: #999a9c;
@@ -599,7 +604,8 @@ td.panel a{
 /*Pagina Noticias*/
 .news-detail .news-images{
 	overflow: hidden;
-	margin-left: 25px;
+	/*margin-left: 25px;*/
+	margin-top: 50px;
 }
 .news-images ul{
 	width: 1835px;
@@ -607,23 +613,24 @@ td.panel a{
 }
 .news-images .buttons{
 	position: absolute;
-	width: 101%;
-	z-index: -1;
-	top: 150px;
-	left: 9px;
+	width: 96%;
+	/* z-index: -1; */
+	top: 87px;
+	left: 18px;
 	height: 1px;
 }
 .news-images .buttons span{
 	height: 10px;
-	background: url(../img/fl.png) no-repeat;
+	/*background: url(../img/fl.png) no-repeat;*/
+	background: url(../js/vendor/bxslider/images/controls.png) no-repeat 0 -32px;
 	display: inline-block;
 	width: 10px;
 	cursor: pointer;
-	padding: 15px;
+	padding: 16px;
 }
 .news-images .buttons span.next{
 	float: right;
-	background: url(../img/fm.png) no-repeat;
+	background: url(../js/vendor/bxslider/images/controls.png) no-repeat -43px -32px;
 }
 .news-images li{
 	float: left;
