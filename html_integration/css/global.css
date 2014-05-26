@@ -221,6 +221,9 @@ section h2{
 	border: none;
 	background: #fff;
 }
+.projects-finished .bx-wrapper .bx-viewport ul{
+	padding: 0;
+}
 .projects-finished .bx-controls a{
 	top: 140%;
 	background: url(../img/fl.png) no-repeat;
