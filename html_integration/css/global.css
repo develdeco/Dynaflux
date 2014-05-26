@@ -228,11 +228,15 @@ section h2{
 	top: 140%;
 	background: url(../img/fl.png) no-repeat;
 }
+.projects-finished .bx-controls .bx-prev{
+	left: 0;
+}
 .projects-finished .bx-controls a.bx-next{
 	background: url(../img/fm.png) no-repeat;
 }
 .projects-finished li{
 	font-size: 14px;
+	padding-left: 15px;
 }
 .projects-finished .project-title{
 	color: #796161;
