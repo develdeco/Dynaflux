@@ -9,7 +9,7 @@ class MenuItem
 	var $level;
 	var $type;
 	var $link;
-
+	
 	var $items;
 
 	public function getId_item()

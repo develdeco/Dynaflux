@@ -6,9 +6,9 @@ class SlideItem
 	var $title;
 	var $reference_id;
 	var $reference_type;
-	var $id_image;
 
-	var $image;
+	var $largeImage;
+	var $smallImage;
 
 	public function getId_slideitem()
 	{
@@ -60,13 +60,24 @@ class SlideItem
 	    $this->id_image = $id_image;
 	}
 
-	public function getImage()
+	public function getLargeImage()
 	{
-	    return $this->image;
+	    return $this->largeImage;
 	}
 	
-	public function setImage($image)
+	public function setLargeImage($largeImage)
 	{
-	    $this->image = $image;
+	    $this->largeImage = $largeImage;
 	}
+
+	public function getSmallImage()
+	{
+	    return $this->smallImage;
+	}
+	
+	public function setSmallImage($smallImage)
+	{
+	    $this->smallImage = $smallImage;
+	}
+
 }

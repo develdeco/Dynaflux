@@ -8,6 +8,7 @@ class Product
 	var $type;
 	var $state;
 
+	var $image;
 	var $manuales;
 	var $brochures;
 
@@ -69,5 +70,15 @@ class Product
 	public function setBrochures($brochures)
 	{
 	    $this->brochures = $brochures;
+	}
+
+	public function getImage()
+	{
+	    return $this->image;
+	}
+	
+	public function setImage($image)
+	{
+	    $this->image = $image;
 	}
 }
