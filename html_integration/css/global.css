@@ -640,7 +640,7 @@ td.panel a{
 	margin-top: 50px;
 }
 .contact-detail{
-	margin-top: 100px;
+	margin-top: 0;
 }
 #map_canvas {
     width: 100%;
@@ -663,10 +663,10 @@ td.panel a{
 	background-color: #7c0406;
 	color: #fff;
 }
-.contact .nav > li > a:hover, 
+/*.contact .nav > li > a:hover, 
 .contact .nav > li > a:focus{
 	background: #A9A9A9;
-}
+}*/
 .contact .tab-content > .active{
 	padding: 0;
 }
@@ -687,4 +687,7 @@ td.panel a{
 	width: 100%;
 	height: 100%;
 	border: 1px solid #ccc;
+}
+.contact-list .nav-tabs{
+	border: none;
 }
