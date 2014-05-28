@@ -1,6 +1,6 @@
 <?php
 
-class News_Model extends Base_Model
+class News_Model extends Translation_Model
 {
 	function __construct()
 	{
@@ -10,18 +10,18 @@ class News_Model extends Base_Model
         $this->id_name = 'id_news';
 	}
 
-	function on_relationship(&$entity, $relationships)
+	function OnRelationship(&$entity, $relationships)
 	{
 		
 	}
 
-	function get_latest()
+	function GetLatest()
 	{
 		$this->db->limit(5);
 		return $this->db->get($this->table)->result($this->entity_class);
 	}
 
-	function get_news($id_news)
+	function GetNews($id_news)
 	{
 		$this->get_entity($id_news);
 	}

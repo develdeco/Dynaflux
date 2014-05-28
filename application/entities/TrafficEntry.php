@@ -1,59 +1,49 @@
 <?php
 
-class TrafficEntry
+class TrafficEntry extends Entity
 {
-	var $idTrafficEntry;
+	var $id;
 	var $EntityId;
 	var $EntityType;
 	var $ip;
 	var $date;
 
-	public function getIdTrafficEntry()
-	{
-	    return $this->idTrafficEntry;
-	}
-	
-	public function setIdTrafficEntry($idTrafficEntry)
-	{
-	    $this->idTrafficEntry = $idTrafficEntry;
-	}
-
-	public function getEntityId()
+	public function GetEntityId()
 	{
 	    return $this->entityId;
 	}
 	
-	public function setEntityId($entityId)
+	public function SetEntityId($entityId)
 	{
 	    $this->entityId = $entityId;
 	}
 
-	public function getEntityType()
+	public function GetEntityType()
 	{
 	    return $this->entityType;
 	}
 	
-	public function setEntityType($entityType)
+	public function SetEntityType($entityType)
 	{
 	    $this->entityType = $entityType;
 	}
 
-	public function getIp()
+	public function GetIp()
 	{
 	    return $this->ip;
 	}
 	
-	public function setIp($ip)
+	public function SetIp($ip)
 	{
 	    $this->ip = $ip;
 	}
 
-	public function getDate()
+	public function GetDate()
 	{
 	    return $this->date;
 	}
 	
-	public function setDate($date)
+	public function SetDate($date)
 	{
 	    $this->date = $date;
 	}

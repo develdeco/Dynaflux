@@ -2,193 +2,115 @@
 
 class Context
 {
-	private $lang_name;
-    private $magazine_name;
-    private $method_url_name;
-    private $method_list_name;
-    private $query_string_name;
-    private $shop_name;
+    private $suffix;
 
     const FRONT_OFFICE = 'front';
     const BACK_OFFICE = 'back';
 
-    static function getLangs()
-	{
-		return array('es','en');
-	}
-
-	public function init($app_mode = self::FRONT_OFFICE)
+	public function Init($appMode = self::FRONT_OFFICE)
     {
-        $suffix = $app_mode != '' ? '_'.$app_mode : '';
-
-        $this->setLangName('lang'.$suffix);
-        $this->setMagazineName('magazine'.$suffix);
-        $this->setMethodUrlName('method_url_params'.$suffix);
-        $this->setMethodListName('method_list_params'.$suffix);
-        $this->setQueryStringName('query_string'.$suffix);
-        $this->setShopName('shop'.$suffix);
-
-        $this->setAppModeContext($app_mode);
+        $this->suffix = $appMode != '' ? '_'.$appMode : '';
+        $this->setAppMode($appMode);
     }
 
-    public function setLangName($lang_name)
+    static function SessionKey($prefix)
     {
-        $this->lang_name = $lang_name;
+        return $prefix.$this->suffix;
     }
 
-    public function getLangName()
+    public function SetAppMode($appMode)
     {
-        return $this->lang_name;
+        $CI =& get_instance();
+        $CI->session->set_userdata('AppMode', $appMode);
     }
 
-    public function setMagazineName($magazine_name)
+    public function GetAppMode()
     {
-        $this->magazine_name = $magazine_name;
-    }
-
-    public function getMagazineName()
-    {
-        return $this->magazine_name;
-    }
-
-    public function setMethodListName($method_list_name)
-    {
-        $this->method_list_name = $method_list_name;
-    }
-
-    public function getMethodListName()
-    {
-        return $this->method_list_name;
-    }
-
-    public function setMethodUrlName($method_url_name)
-    {
-        $this->method_url_name = $method_url_name;
-    }
-
-    public function getMethodUrlName()
-    {
-        return $this->method_url_name;
-    }
-
-    public function setQueryStringName($query_string_name)
-    {
-        $this->query_string_name = $query_string_name;
-    }
-
-    public function getQueryStringName()
-    {
-        return $this->query_string_name;
-    }
-
-    public function setShopName($shop_name)
-    {
-        $this->shop_name = $shop_name;
-    }
-
-    public function getShopName()
-    {
-        return $this->shop_name;
+        $CI =& get_instance();
+        return $CI->session->userdata('AppMode') ?
+            $CI->session->userdata('AppMode') : self::FRONT_OFFICE;
     }
 
     /** lang is already defined in the session? **/
-    function isLangContextDefined(){
+    public function IsLangCodeDefined()
+    {
         $CI =& get_instance();
-        return $CI->session->userdata($this->getLangName()) ? TRUE : FALSE;
+        return $CI->session->userdata(self::SessionKey('LangCode')) ? TRUE : FALSE;
     }
 
-    function setLangContext($lang){
+    public function SetLangCode($langCode)
+    {
         $CI =& get_instance();
-        $CI->session->set_userdata($this->getLangName(), $lang);
+        $CI->session->set_userdata(self::SessionKey('LangCode'), $langCode);
     }
 
     /** lang defined with the last call of Base_controller:setcontext during the navigation*/
-    function getLangContext(){
+    public function GetLangCode()
+    {
         $CI =& get_instance();
-        return $CI->session->userdata($this->getLangName()) ?
-            $CI->session->userdata($this->getLangName()) : 'fr';
+        return $CI->session->userdata(self::SessionKey('LangCode')) ?
+            $CI->session->userdata(self::SessionKey('LangCode')) : 'es';
     }
 
-    function setMagazineContext($magazine){
+    public function SetTranslationId($transID)
+    {
         $CI =& get_instance();
-        $CI->session->set_userdata($this->getMagazineName(), $magazine);
+        $CI->session->set_userdata(self::SessionKey('TransID'), $transID);
     }
 
     /** Magazine defined with the last call of Base_controller:setcontext during the navigation*/
-    function getMagazineContext(){
+    public function GetTranslationId()
+    {
         $CI =& get_instance();
-        return $CI->session->userdata($this->getMagazineName()) ?
-            $CI->session->userdata($this->getMagazineName()) : NULL;
+        return $CI->session->userdata(self::SessionKey('TransID')) ?
+            $CI->session->userdata(self::SessionKey('TransID')) : NULL;
     }
 
-    /** remove the current magazine data*/
-    function removeMagazineContext(){
+    public function SetParamsUrl($paramsURL)
+    {
         $CI =& get_instance();
-        $CI->session->set_userdata($this->getMagazineName(), false);
-    }
-
-    function setParamsUrlContext($params_url){
-        $CI =& get_instance();
-        $CI->session->set_userdata($this->getMethodUrlName(), $params_url);
+        $CI->session->set_userdata(self::SessionKey('ParamsURL'), $paramsURL);
     }
 
     /** params defined with the last call of Base_controller:setcontext during the navigation*/
-    function getParamsUrlContext(){
+    public function GetParamsUrl()
+    {
         $CI =& get_instance();
-        return $CI->session->userdata($this->getMethodUrlName()) ?
-            $CI->session->userdata($this->getMethodUrlName()) : '';
+        return $CI->session->userdata(self::SessionKey('ParamsURL')) ?
+            $CI->session->userdata(self::SessionKey('ParamsURL')) : '';
     }
 
-    function setParamsListContext($params_list){
+    public function SetParamsList($paramsList)
+    {
         $CI =& get_instance();
-        $CI->session->set_userdata($this->getMethodListName(), $params_list);
+        $CI->session->set_userdata(self::SessionKey('ParamsList'), $paramsList);
     }
 
     /** params defined with the last call of Base_controller in array form:setcontext during the navigation*/
-    function getParamsListContext(){
-        $CI =& get_instance();
-        return $CI->session->userdata($this->getMethodListName()) ?
-            $CI->session->userdata($this->getMethodListName()) : array();
-    }
-
-    function removeParamContext(){
-        $CI =& get_instance();
-        $CI->session->set_userdata($this->getMethodUrlName(), '');
-        $CI->session->set_userdata($this->getMethodListName(), array());
-    }
-
-    function setQueryStringContext($query_string){
-        $CI =& get_instance();
-        $CI->session->set_userdata($this->getQueryStringName(), $query_string);
-    }
-
-    function getQueryStringContext(){
-        $CI =& get_instance();
-        return $CI->session->userdata($this->getQueryStringName()) ?
-            $CI->session->userdata($this->getQueryStringName()) : '';
-    }
-
-    function setShopContext($shop){
-        $CI =& get_instance();
-        $CI->session->set_userdata($this->getShopName(), $shop);
-    }
-
-    function getShopContext(){
-        $CI =& get_instance();
-        return $CI->session->userdata($this->getShopName()) ?
-            $CI->session->userdata($this->getShopName()) : false;
-    }
-
-    function setAppModeContext($app_mode)
+    public function GetParamsList()
     {
         $CI =& get_instance();
-        $CI->session->set_userdata('app_mode', $app_mode);
+        return $CI->session->userdata(self::SessionKey('ParamsList')) ?
+            $CI->session->userdata(self::SessionKey('ParamsList')) : array();
     }
 
-    function getAppModeContext()
+    public function RemoveParams()
     {
         $CI =& get_instance();
-        return $CI->session->userdata('app_mode') ?
-            $CI->session->userdata('app_mode') : self::FRONT_OFFICE;
+        $CI->session->set_userdata(self::SessionKey('ParamsURL'), '');
+        $CI->session->set_userdata(self::SessionKey('ParamsList'), array());
+    }
+
+    public function SetQueryString($queryString)
+    {
+        $CI =& get_instance();
+        $CI->session->set_userdata(self::SessionKey('QueryString'), $queryString);
+    }
+
+    public function GetQueryString()
+    {
+        $CI =& get_instance();
+        return $CI->session->userdata(self::SessionKey('QueryString')) ?
+            $CI->session->userdata(self::SessionKey('QueryString')) : '';
     }
 }

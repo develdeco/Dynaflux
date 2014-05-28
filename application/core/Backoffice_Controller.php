@@ -3,33 +3,34 @@
 /* Form Class for Admin */
 class Backoffice_Controller extends Base_Controller
 {
-	protected $view_list;
-    protected $view_form;
+	protected $viewList;
+    protected $viewForm;
     protected $instances;
 
 	function __construct()
 	{
 		parent::__construct();
-        if($this->session->userdata('logged_in') == FALSE) {
-           redirect('admin/auth/login');
+
+        $this->context->Init(Context::BACK_OFFICE);
+
+        if($this->context->isLoggedIn() == FALSE) 
+        {
+           redirect('back/auth/login');
         }
 
-        setlocale(LC_ALL, 'fr_FR.UTF-8');
-        $this->lang->load('quiltmania');
+        $this->lang->load('dynaflux');
         $this->lang->load('form_validation');
         $this->lang->load('upload');
         $this->lang->load('email');
         
         $this->load->library('images');
-        $this->instances = array();
-
-        $this->quilt_context->init(Quilt_context::BACK_OFFICE);
+        $this->relationships = array();
 	}
 
 	/* Index */
 	function index()
 	{
-        $this->setContext(func_get_args());
+        $this->SetContext(func_get_args());
 		$this->list_all();
 	}
 
@@ -38,11 +39,11 @@ class Backoffice_Controller extends Base_Controller
 	 */
 	function create()
 	{
-        $this->setContext(func_get_args());
-        $this->data['form_action'] = 'save';
-		$this->load->view('admin/common/header_view', $this->data);
-        $this->load->view('admin/'.$this->view_form, $this->data);
-        $this->load->view('admin/common/footer_view', $this->data);
+        $this->SetContext(func_get_args());
+        $this->data['formAction'] = 'save';
+		$this->load->view('back/common/header', $this->data);
+        $this->load->view('back/'.$this->viewForm, $this->data);
+        $this->load->view('back/common/footer', $this->data);
 	}
 
     /*
@@ -50,13 +51,13 @@ class Backoffice_Controller extends Base_Controller
 	 */
     function edit($id=null)
     {
-        $this->setContext(func_get_args());
+        $this->SetContext(func_get_args());
 
-        $this->data['form_action'] = "update/$id";
-        if($id != null) $this->data['entity'] = $this->OBJ->get_entry($id, $this->instances);
-        $this->load->view('admin/common/header_view', $this->data);
-        $this->load->view('admin/'.$this->view_form, $this->data);
-        $this->load->view('admin/common/footer_view', $this->data);
+        $this->data['formAction'] = "update/$id";
+        if($id != null) $this->data['entity'] = $this->entity_model->get_entry($id, $this->instances);
+        $this->load->view('back/common/header', $this->data);
+        $this->load->view('back/'.$this->viewForm, $this->data);
+        $this->load->view('back/common/footer', $this->data);
     }
 
     /**
@@ -68,8 +69,8 @@ class Backoffice_Controller extends Base_Controller
 
         if($this->form_validation->run()){
             $entity = $this->_from_form();
-            $this->data['save'] = $this->OBJ->insert_entry($entity);
-            $this->data['action_performed'] = 'save';
+            $this->data['save'] = $this->entity_model->insert_entity($entity);
+            $this->data['actionPerformed'] = 'save';
             $this->success($entity);
         }
         else {
@@ -86,9 +87,9 @@ class Backoffice_Controller extends Base_Controller
         if($this->form_validation->run()){
             $entity = $this->_from_form();
 
-            $this->data['update'] = $this->OBJ->update_entry($entity);
+            $this->data['update'] = $this->entity_model->update_entry($entity);
             
-            $this->data['action_performed'] = 'update';
+            $this->data['actionPerformed'] = 'update';
             $this->success($entity);
         }
         else {
@@ -100,40 +101,40 @@ class Backoffice_Controller extends Base_Controller
 	/**
 	 * Delete register
 	 */
-	function remove($id=null,$confirm=null)
+	function remove($id = null, $confirm = null)
 	{
-        $this->setContext(func_get_args());
+        $this->SetContext(func_get_args());
 
-         $this->load->view('admin/common/header_view', $this->data);
+         $this->load->view('back/common/header', $this->data);
         if(!$confirm){
-            $this->data['remove'] = $this->OBJ->remove_entry($id);
-            $this->data['action_performed'] = 'remove';
-            $this->_set_success_message($this->OBJ->create_instance($id),true);
-            $this->load->view('admin/common/success_message', $this->data);
+            $this->data['remove'] = $this->entity_model->remove_entry($id);
+            $this->data['actionPerformed'] = 'remove';
+            $this->_set_success_message($this->entity_model->create_instance($id),true);
+            $this->load->view('back/common/success_message', $this->data);
         }
         else {
-            $this->_set_confirm_dialog($this->OBJ->create_instance($id));
-            $this->load->view('admin/common/confirmation_dialog', $this->data);
+            $this->_set_confirm_dialog($this->entity_model->create_instance($id));
+            $this->load->view('back/common/confirmation_dialog', $this->data);
         }
-        $this->load->view('admin/common/footer_view', $this->data);
+        $this->load->view('back/common/footer', $this->data);
 	}
 
 	/* default list */
 	function list_all()
 	{
-        $this->setContext(func_get_args());
-		$this->data['list'] = $this->OBJ->list_entries($this->instances);
-        $this->load->view('admin/common/header_view', $this->data);
-        $this->load->view('admin/'.$this->view_list, $this->data);
-        $this->load->view('admin/common/footer_view', $this->data);
+        $this->SetContext(func_get_args());
+		$this->data['list'] = $this->entity_model->GetEntityList($this->instances);
+        $this->load->view('back/common/header', $this->data);
+        $this->load->view('back/'.$this->view_list, $this->data);
+        $this->load->view('back/common/footer', $this->data);
 	}
 
     function success($entity,$delete = false)
     {
         $this->_set_success_message($entity,$delete);
-        $this->load->view('admin/common/header_view', $this->data);
-        $this->load->view('admin/common/success_message', $this->data);
-        $this->load->view('admin/common/footer_view', $this->data);
+        $this->load->view('back/common/header', $this->data);
+        $this->load->view('back/common/success_message', $this->data);
+        $this->load->view('back/common/footer', $this->data);
     }
 
     function _get_image_path($entity, $file_name)

@@ -1,59 +1,49 @@
 <?php
 
-class CategoryItem
+class CategoryItem extends Entity
 {
-	var $idEntity;
-	var $idCategory;
+	var $id;
+	var $categoryId;
 	var $name;
 	var $level;
 	var $idParent;
 	
-	public function getIdEntity()
+	public function GetCategoryId()
 	{
-	    return $this->idEntity;
+	    return $this->categoryId;
 	}
 	
-	public function setIdEntity($idEntity)
+	public function SetCategoryId($categoryId)
 	{
-	    $this->idEntity = $idEntity;
+	    $this->categoryId = $categoryId;
 	}
 
-	public function getIdCategory()
-	{
-	    return $this->idCategory;
-	}
-	
-	public function setIdCategory($idCategory)
-	{
-	    $this->idCategory = $idCategory;
-	}
-
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getLevel()
+	public function GetLevel()
 	{
 	    return $this->level;
 	}
 	
-	public function setLevel($level)
+	public function SetLevel($level)
 	{
 	    $this->level = $level;
 	}
 
-	public function getIdParent()
+	public function GetIdParent()
 	{
 	    return $this->idParent;
 	}
 	
-	public function setIdParent($idParent)
+	public function SetIdParent($idParent)
 	{
 	    $this->idParent = $idParent;
 	}

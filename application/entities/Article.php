@@ -1,48 +1,38 @@
 <?php
 
-class Article
+class Article extends Entity
 {
-	var $idEntity;
+	var $id;
 	var $title;
 	var $content;
 	var $type;
 
-	public function getIdEntity()
-	{
-	    return $this->idEntity;
-	}
-	
-	public function setIdEntity($idEntity)
-	{
-	    $this->idEntity = $idEntity;
-	}
-
-	public function getTitle()
+	public function GetTitle()
 	{
 	    return $this->title;
 	}
 	
-	public function setTitle($title)
+	public function SetTitle($title)
 	{
 	    $this->title = $title;
 	}
 
-	public function getContent()
+	public function GetContent()
 	{
 	    return $this->content;
 	}
 	
-	public function setContent($content)
+	public function SetContent($content)
 	{
 	    $this->content = $content;
 	}
 
-	public function getType()
+	public function GetType()
 	{
 	    return $this->type;
 	}
 	
-	public function setType($type)
+	public function SetType($type)
 	{
 	    $this->type = $type;
 	}

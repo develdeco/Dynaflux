@@ -1,26 +1,16 @@
 <?php
 
-class Category
+class Category extends Entity
 {
-	var $idEntity;
+	var $id;
 	var $name;
 
-	public function getIdEntity()
-	{
-	    return $this->idEntity;
-	}
-	
-	public function setIdEntity($idEntity)
-	{
-	    $this->idEntity = $idEntity;
-	}
-
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}

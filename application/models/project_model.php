@@ -1,29 +1,28 @@
 <?php
 
-class Project_Model extends Base_Model
+class Project_Model extends Translation_Model
 {
 	function __construct()
 	{
 		parent::__construct();
         $this->table = 'project';
-        $this->entity_class = 'Project';
-        $this->id_name = 'id_project';
+        $this->entityClass = 'Project';
 	}
 
-	function on_relationship(&$entity, $relationships)
+	function OnRelationship(&$entity, $relationships)
 	{
 		
 	}
 
-	function get_completed()
+	function GetCompleted()
 	{
 		$this->db->limit(10);
-		return $this->db->get_where($this->table, array('state' => 'completed'))->result($this->entity_class);
+		return $this->db->get_where($this->table, array('state' => 'completed'))->result($this->entityClass);
 	}
 
-	function get_project($id_project)
+	function GetProject($id_project)
 	{
-		$project = $this->get_entity($id_project);
+		$project = $this->GetEntity($id_project);
 		$this->db->get_where($this->table.'_')
 	}
 }

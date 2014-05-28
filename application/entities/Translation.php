@@ -1,49 +1,39 @@
 <?php
 
-class Translation
+class Translation extends Entity
 {
-	var $idTranslation;
-	var $idEntity;
+	var $id;
+	var $entityId;
 	var $entityType;
-	var $lang;
+	var $langCode;
 
-	public function getIdTranslation()
+	public function GetEntityId()
 	{
-	    return $this->idTranslation;
+	    return $this->entityId;
 	}
 	
-	public function setIdTranslation($idTranslation)
+	public function SetEntityId($entityId)
 	{
-	    $this->idTranslation = $idTranslation;
+	    $this->entityId = $entityId;
 	}
 
-	public function getIdEntity()
-	{
-	    return $this->idEntity;
-	}
-	
-	public function setIdEntity($idEntity)
-	{
-	    $this->idEntity = $idEntity;
-	}
-
-	public function getEntityType()
+	public function GetEntityType()
 	{
 	    return $this->entityType;
 	}
 	
-	public function setEntityType($entityType)
+	public function SetEntityType($entityType)
 	{
 	    $this->entityType = $entityType;
 	}
-
-	public function getLang()
+	
+	public function GetLangCode()
 	{
-	    return $this->lang;
+	    return $this->langCode;
 	}
 	
-	public function setLang($lang)
+	public function SetLangCode($langCode)
 	{
-	    $this->lang = $lang;
+	    $this->langCode = $langCode;
 	}
 }

@@ -1,60 +1,50 @@
 <?php 
 
-class News
+class News extends Entity
 {
-	var $idNews;
+	var $id;
 	var $title;
 	var $content;
 	var $date;
 	
 	var $images;
 
-	public function getIdNews()
-	{
-	    return $this->idNews;
-	}
-	
-	public function setIdNews($idNews)
-	{
-	    $this->idNews = $idNews;
-	}
-
-	public function getTitle()
+	public function GetTitle()
 	{
 	    return $this->title;
 	}
 	
-	public function setTitle($title)
+	public function SetTitle($title)
 	{
 	    $this->title = $title;
 	}
 
-	public function getContent()
+	public function GetContent()
 	{
 	    return $this->content;
 	}
 	
-	public function setContent($content)
+	public function SetContent($content)
 	{
 	    $this->content = $content;
 	}
 
-	public function getDate()
+	public function GetDate()
 	{
 	    return $this->date;
 	}
 	
-	public function setDate($date)
+	public function SetDate($date)
 	{
 	    $this->date = $date;
 	}
 
-	public function getImages()
+	public function GetImages()
 	{
 	    return $this->images;
 	}
 	
-	public function setImages($images)
+	public function SetImages($images)
 	{
 	    $this->images = $images;
 	}
