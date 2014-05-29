@@ -2,16 +2,16 @@
 	<ul class="bxslider">
 		<?php foreach($slider as $slideItem): ?>
 		<li>
-			<span><?php echo $slideItem->getTitle() ?></span>
-			<img src="<?php echo public_url($slideItem->getLargeImage()) ?>" />
+			<span><?php echo $slideItem->GetTitle() ?></span>
+			<img src="<?php echo Tools::PublicUrl($slideItem->GetLargeImage()) ?>" />
 		</li>
 		<?php endforeach ?>
 	</ul>
 	<div id="bx-pager">
 		<?php foreach($slider as $key => $slideItem): ?>
 		<a data-slide-index="<?php echo $key ?>" href="#">
-			<img src="<?php echo public_url($slideItem->getSmallImage()) ?>" />
-			<span class="pager-text"><?php echo $slideItem->getTitle() ?></span>
+			<img src="<?php echo Tools::PublicUrl($slideItem->GetSmallImage()) ?>" />
+			<span class="pager-text"><?php echo $slideItem->GetTitle() ?></span>
 		</a>
 		<?php endforeach ?>
 	</div>
@@ -63,34 +63,34 @@
 	</article>
 </section>
 <section class="projects-finished col-md-3">
-	<h2><?php echo $this->lang->line('projects_block_title') ?></h2>
+	<h2><?php echo $this->lang->line('ProjectsBlockTitle') ?></h2>
 	<ul class="bxslider-projects">
 		<?php foreach($projects as $project): ?>
 		<li>
-			<div class="project-title"><?php echo $project->getName() ?></div>
-			<div class="project-body"><?php echo $project->getDescription() ?></div>
+			<div class="project-title"><?php echo $project->GetName() ?></div>
+			<div class="project-body"><?php echo $project->GetDescription() ?></div>
 		</li>
 		<?php endforeach ?>
 	</ul>
 </section>
 <section class="featured-products col-md-6">
-	<h2><?php echo $this->lang->line('products_block_title') ?></h2>
+	<h2><?php echo $this->lang->line('ProductsBlockTitle') ?></h2>
 	<div class="row">
 		<ul class="products">
 			<?php foreach($products as $product): ?>
 			<li class="col-md-6">
 				<div class="products-image">
-					<a href="<?php echo href($product->getId_product(), 'product') ?>">
-						<img src="<?php echo public_url($product->getImage()) ?>" alt="<?php echo $product->getTitle() ?>">
+					<a href="<?php echo Tools::Href($product) ?>">
+						<img src="<?php echo Tools::ProductUrl($product->GetImage()->GetPath()) ?>" alt="<?php echo $product->GetTitle() ?>">
 					</a>
 				</div>
-				<div class="product-title"><?php echo $product->getTitle() ?></div>
+				<div class="product-title"><?php echo $product->GetTitle() ?></div>
 			</li>
 			<?php endforeach ?>			
 		</ul>
 	</div>
 </section>
 <section class="latest-news col-md-3">
-	<h2><?php $this->lang->line('news_block_title') ?></h2>
+	<h2><?php $this->lang->line('NewsBlockTitle') ?></h2>
 	<?php $this->loadView('news/block') ?>
 </section>

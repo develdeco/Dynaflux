@@ -1,60 +1,50 @@
 <?php
 
-class Project
+class Project extends Entity
 {
-	var $id_project;
+	var $id;
 	var $name;
 	var $description;
 	var $state;
 
 	var $images;
 
-	public function getId_project()
-	{
-	    return $this->id_project;
-	}
-	
-	public function setId_project($id_project)
-	{
-	    $this->id_project = $id_project;
-	}
-
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getDescription()
+	public function GetDescription()
 	{
 	    return $this->description;
 	}
 	
-	public function setDescription($description)
+	public function SetDescription($description)
 	{
 	    $this->description = $description;
 	}
 
-	public function getState()
+	public function GetState()
 	{
 	    return $this->state;
 	}
 	
-	public function setState($state)
+	public function SetState($state)
 	{
 	    $this->state = $state;
 	}
 
-	public function getImages()
+	public function GetImages()
 	{
 	    return $this->images;
 	}
 	
-	public function setImages($images)
+	public function SetImages($images)
 	{
 	    $this->images = $images;
 	}

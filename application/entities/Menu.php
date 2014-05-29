@@ -1,49 +1,39 @@
 <?php
 
-class Menu
+class Menu extends Entity
 {
-	var $id_menu;
+	var $id;
 	var $name;
 	var $description;
 
 	var $items;
 
-	public function getId_menu()
-	{
-	    return $this->id_menu;
-	}
-	
-	public function setId_menu($id_menu)
-	{
-	    $this->id_menu = $id_menu;
-	}
-
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getDescription()
+	public function GetDescription()
 	{
 	    return $this->description;
 	}
 	
-	public function setDescription($description)
+	public function SetDescription($description)
 	{
 	    $this->description = $description;
 	}
 
-	public function getItems()
+	public function GetItems()
 	{
 	    return $this->items;
 	}
 	
-	public function setItems($items)
+	public function SetItems($items)
 	{
 	    $this->items = $items;
 	}

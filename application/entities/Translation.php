@@ -1,12 +1,11 @@
 <?php
 
-class TrafficEntry extends Entity
+class Translation extends Entity
 {
 	var $id;
-	var $EntityId;
-	var $EntityType;
-	var $ip;
-	var $date;
+	var $entityId;
+	var $entityType;
+	var $langCode;
 
 	public function GetEntityId()
 	{
@@ -27,25 +26,14 @@ class TrafficEntry extends Entity
 	{
 	    $this->entityType = $entityType;
 	}
-
-	public function GetIp()
+	
+	public function GetLangCode()
 	{
-	    return $this->ip;
+	    return $this->langCode;
 	}
 	
-	public function SetIp($ip)
+	public function SetLangCode($langCode)
 	{
-	    $this->ip = $ip;
+	    $this->langCode = $langCode;
 	}
-
-	public function GetDate()
-	{
-	    return $this->date;
-	}
-	
-	public function SetDate($date)
-	{
-	    $this->date = $date;
-	}
-
 }

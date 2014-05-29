@@ -1,8 +1,8 @@
 <?php
 
-class Product
+class Product extends Entity
 {
-	var $id_product;
+	var $id;
 	var $title;
 	var $description;
 	var $type;
@@ -12,72 +12,62 @@ class Product
 	var $manuales;
 	var $brochures;
 
-	public function getId_product()
-	{
-	    return $this->id_product;
-	}
-	
-	public function setId_product($id_product)
-	{
-	    $this->id_product = $id_product;
-	}
-
-	public function getTitle()
+	public function GetTitle()
 	{
 	    return $this->title;
 	}
 	
-	public function setTitle($title)
+	public function SetTitle($title)
 	{
 	    $this->title = $title;
 	}
 
-	public function getDescription()
+	public function GetDescription()
 	{
 	    return $this->description;
 	}
 	
-	public function setDescription($description)
+	public function SetDescription($description)
 	{
 	    $this->description = $description;
 	}
 
-	public function getType()
+	public function GetType()
 	{
 	    return $this->type;
 	}
 	
-	public function setType($type)
+	public function SetType($type)
 	{
 	    $this->type = $type;
 	}
 
-	public function getManuales()
+	public function GetManuales()
 	{
 	    return $this->manuales;
 	}
 	
-	public function setManuales($manuales)
+	public function SetManuales($manuales)
 	{
 	    $this->manuales = $manuales;
 	}
 
-	public function getBrochures()
+	public function GetBrochures()
 	{
 	    return $this->brochures;
 	}
 	
-	public function setBrochures($brochures)
+	public function SetBrochures($brochures)
 	{
 	    $this->brochures = $brochures;
 	}
 
-	public function getImage()
+	public function GetImage()
 	{
 	    return $this->image;
 	}
 	
-	public function setImage($image)
+	public function SetImage($image)
 	{
 	    $this->image = $image;
 	}

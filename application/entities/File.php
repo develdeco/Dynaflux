@@ -1,48 +1,38 @@
 <?php
 
-class File
+class File extends Entity
 {
-	var $id_file;
+	var $id;
 	var $path;
 	var $name;
 	var $type;
 
-	public function getId_file()
-	{
-	    return $this->id_file;
-	}
-	
-	public function setId_file($id_file)
-	{
-	    $this->id_file = $id_file;
-	}
-
-	public function getPath()
+	public function GetPath()
 	{
 	    return $this->path;
 	}
 	
-	public function setPath($path)
+	public function SetPath($path)
 	{
 	    $this->path = $path;
 	}
 
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getType()
+	public function GetType()
 	{
 	    return $this->type;
 	}
 	
-	public function setType($type)
+	public function SetType($type)
 	{
 	    $this->type = $type;
 	}

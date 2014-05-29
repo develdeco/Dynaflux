@@ -1,13 +1,11 @@
-<?php 
+<?php
 
-class News extends Entity
+class Article extends Entity
 {
 	var $id;
 	var $title;
 	var $content;
-	var $date;
-	
-	var $images;
+	var $type;
 
 	public function GetTitle()
 	{
@@ -29,23 +27,13 @@ class News extends Entity
 	    $this->content = $content;
 	}
 
-	public function GetDate()
+	public function GetType()
 	{
-	    return $this->date;
+	    return $this->type;
 	}
 	
-	public function SetDate($date)
+	public function SetType($type)
 	{
-	    $this->date = $date;
-	}
-
-	public function GetImages()
-	{
-	    return $this->images;
-	}
-	
-	public function SetImages($images)
-	{
-	    $this->images = $images;
+	    $this->type = $type;
 	}
 }

@@ -1,59 +1,49 @@
 <?php
 
-class EntityCreation
+class EntityCreation extends Entity
 {
-	var $id_entitycreation;
-	var $entiy_id;
-	var $entity_type;
-	var $entity_title;
+	var $id;
+	var $EntityId;
+	var $EntityType;
+	var $EntityTitle;
 	var $date;
 
-	public function getId_entitycreation()
+	public function GetEntityId()
 	{
-	    return $this->id_entitycreation;
+	    return $this->EntityId;
 	}
 	
-	public function setId_entitycreation($id_entitycreation)
+	public function SetEntityId($EntityId)
 	{
-	    $this->id_entitycreation = $id_entitycreation;
+	    $this->EntityId = $EntityId;
 	}
 
-	public function getEntiy_id()
+	public function GetEntityType()
 	{
-	    return $this->entiy_id;
+	    return $this->EntityType;
 	}
 	
-	public function setEntiy_id($entiy_id)
+	public function SetEntityType($EntityType)
 	{
-	    $this->entiy_id = $entiy_id;
+	    $this->EntityType = $EntityType;
 	}
 
-	public function getEntity_type()
+	public function GetEntityTitle()
 	{
-	    return $this->entity_type;
+	    return $this->EntityTitle;
 	}
 	
-	public function setEntity_type($entity_type)
+	public function SetEntityTitle($EntityTitle)
 	{
-	    $this->entity_type = $entity_type;
-	}
-
-	public function getEntity_title()
-	{
-	    return $this->entity_title;
+	    $this->EntityTitle = $EntityTitle;
 	}
 	
-	public function setEntity_title($entity_title)
-	{
-	    $this->entity_title = $entity_title;
-	}
-
-	public function getDate()
+	public function GetDate()
 	{
 	    return $this->date;
 	}
 	
-	public function setDate($date)
+	public function SetDate($date)
 	{
 	    $this->date = $date;
 	}

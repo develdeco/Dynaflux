@@ -1,81 +1,61 @@
 <?php
 
-class SlideItem
+class SlideItem extends Entity
 {
-	var $id_slideitem;
+	var $id;
 	var $title;
-	var $reference_id;
-	var $reference_type;
+	var $ReferenceId;
+	var $ReferenceType;
 
 	var $largeImage;
 	var $smallImage;
 
-	public function getId_slideitem()
-	{
-	    return $this->id_slideitem;
-	}
-	
-	public function setId_slideitem($id_slideitem)
-	{
-	    $this->id_slideitem = $id_slideitem;
-	}
-
-	public function getTitle()
+	public function GetTitle()
 	{
 	    return $this->title;
 	}
 	
-	public function setTitle($title)
+	public function SetTitle($title)
 	{
 	    $this->title = $title;
 	}
-
-	public function getReference_id()
+	
+	public function GetReferenceId()
 	{
-	    return $this->reference_id;
+	    return $this->ReferenceId;
 	}
 	
-	public function setReference_id($reference_id)
+	public function SetReferenceId($ReferenceId)
 	{
-	    $this->reference_id = $reference_id;
+	    $this->ReferenceId = $ReferenceId;
 	}
 
-	public function getReference_type()
+	public function GetReferenceType()
 	{
-	    return $this->reference_type;
+	    return $this->ReferenceType;
 	}
 	
-	public function setReference_type($reference_type)
+	public function SetReferenceType($ReferenceType)
 	{
-	    $this->reference_type = $reference_type;
+	    $this->ReferenceType = $ReferenceType;
 	}
 
-	public function getId_image()
-	{
-	    return $this->id_image;
-	}
-	
-	public function setId_image($id_image)
-	{
-	    $this->id_image = $id_image;
-	}
-
-	public function getLargeImage()
+	public function GetLargeImage()
 	{
 	    return $this->largeImage;
 	}
 	
-	public function setLargeImage($largeImage)
+	public function SetLargeImage($largeImage)
 	{
 	    $this->largeImage = $largeImage;
 	}
 
-	public function getSmallImage()
+	public function GetSmallImage()
 	{
 	    return $this->smallImage;
 	}
 	
-	public function setSmallImage($smallImage)
+	public function SetSmallImage($smallImage)
 	{
 	    $this->smallImage = $smallImage;
 	}

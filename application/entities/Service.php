@@ -1,49 +1,39 @@
 <?php
 
-class Service
+class Service extends Entity
 {
-	var $id_service;
+	var $id;
 	var $name;
 	var $description;
 
 	var $icon;
 
-	public function getId_service()
-	{
-	    return $this->id_service;
-	}
-	
-	public function setId_service($id_service)
-	{
-	    $this->id_service = $id_service;
-	}
-
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getDescription()
+	public function GetDescription()
 	{
 	    return $this->description;
 	}
 	
-	public function setDescription($description)
+	public function SetDescription($description)
 	{
 	    $this->description = $description;
 	}
 
-	public function getIcon()
+	public function GetIcon()
 	{
 	    return $this->icon;
 	}
 	
-	public function setIcon($icon)
+	public function SetIcon($icon)
 	{
 	    $this->icon = $icon;
 	}

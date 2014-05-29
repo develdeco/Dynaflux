@@ -1,10 +1,10 @@
 <?php
 
-class MenuItem
+class MenuItem extends Entity
 {
-	var $id_item;
-	var $id_menu;
-	var $id_parent;
+	var $id;
+	var $menuId;
+	var $parentId;
 	var $name;
 	var $level;
 	var $type;
@@ -12,82 +12,72 @@ class MenuItem
 	
 	var $items;
 
-	public function getId_item()
+	public function GetMenuId()
 	{
-	    return $this->id_item;
+	    return $this->menuId;
 	}
 	
-	public function setId_item($id_item)
+	public function SetMenuId($menuId)
 	{
-	    $this->id_item = $id_item;
-	}
-
-	public function getId_menu()
-	{
-	    return $this->id_menu;
+	    $this->menuId = $menuId;
 	}
 	
-	public function setId_menu($id_menu)
+	public function GetParentId()
 	{
-	    $this->id_menu = $id_menu;
-	}
-
-	public function getId_parent()
-	{
-	    return $this->id_parent;
+	    return $this->parentId;
 	}
 	
-	public function setId_parent($id_parent)
+	public function SetParentId($parentId)
 	{
-	    $this->id_parent = $id_parent;
+	    $this->parentId = $parentId;
 	}
-
-	public function getName()
+	
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}
 
-	public function getLevel()
+	public function GetLevel()
 	{
 	    return $this->level;
 	}
 	
-	public function setLevel($level)
+	public function SetLevel($level)
 	{
 	    $this->level = $level;
 	}
 
-	public function getType()
+	public function GetType()
 	{
 	    return $this->type;
 	}
 	
-	public function setType($type)
+	public function SetType($type)
 	{
 	    $this->type = $type;
 	}
 
-	public function getLink()
+	public function GetLink()
 	{
 	    return $this->link;
 	}
 	
-	public function setLink($link)
+	public function SetLink($link)
 	{
 	    $this->link = $link;
 	}
 
-	public function getItems()
+	public function GetItems()
 	{
 	    return $this->items;
 	}
 	
-	public function setItems($items)
+	public function SetItems($items)
 	{
 	    $this->items = $items;
 	}

@@ -1,37 +1,27 @@
 <?php
 
-class Image
+class Image extends Entity
 {
-	var $id_image;
+	var $id;
 	var $path;
 	var $name;
 
-	public function getId_image()
-	{
-	    return $this->id_image;
-	}
-	
-	public function setId_image($id_image)
-	{
-	    $this->id_image = $id_image;
-	}
-
-	public function getPath()
+	public function GetPath()
 	{
 	    return $this->path;
 	}
 	
-	public function setPath($path)
+	public function SetPath($path)
 	{
 	    $this->path = $path;
 	}
 
-	public function getName()
+	public function GetName()
 	{
 	    return $this->name;
 	}
 	
-	public function setName($name)
+	public function SetName($name)
 	{
 	    $this->name = $name;
 	}

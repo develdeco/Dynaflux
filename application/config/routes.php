@@ -38,17 +38,16 @@
 |
 */
 
-$route['default_controller'] = "front/main_front/inicio/es";
+$route['default_controller'] = "front/main_front/home/es";
 $route['404_override'] = '';
 
 /** Front Routing **/
-$route['es/([a-z\_]+)'] = 'front/main_front/$1/es';
-$route['es/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/es';
-$route['es/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/es';
-
-$route['en/([a-z\_]+)'] = 'front/main_front/$1/en';
-$route['en/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/en';
-$route['en/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/en';
+foreach(Tools::getLangs() as $langCode)
+{
+	$route[$langCode.'/([a-z\_]+)'] = 'front/main_front/$1/'.$langCode;
+	$route[$langCode.'/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/'.$langCode;
+	$route[$langCode.'/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/'.$langCode;
+}
 
 /** Back Routing **/
 $route['admin/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'back/$1_back/$2/$3';
