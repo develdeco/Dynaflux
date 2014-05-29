@@ -48,6 +48,10 @@ $( document ).ready(function() {
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 
+  $('#oficinas .office').click(function(){
+    $('#oficinas .office').removeClass('active');
+    $(this).addClass('active');
+  });
 });
 var geocoder;
 var map;

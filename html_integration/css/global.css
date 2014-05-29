@@ -705,3 +705,6 @@ td.panel a{
 .contact-list .nav-tabs{
 	border: none;
 }
+#oficinas .office.active{
+	background: #7c0406;
+}
