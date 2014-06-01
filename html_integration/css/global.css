@@ -534,79 +534,29 @@ li.person{
 	background: url(../img/divider3.png) center bottom no-repeat;
 	min-height: 230px;
 }
-.service.tabs > table > tbody > tr > td {
-	width: 350px;
-	vertical-align: top;
+/*SERVICE*/
+.service li.nav.col-md-4 > div:hover{
+	background: #ccc;
+}
+.service li.nav.col-md-4 > div{
+	width: 80%;
+	padding: 20px 0;
+}
+.service li.nav.col-md-4 {
 	text-align: center;
-	padding: 30px 0;
+	margin-bottom: 50px
 }
-.service.tabs .panel div {
-	text-align: justify;
+.service .row{
+	margin-top: 50px;
 }
-.service.tabs .panel .name {
+.service .modal-content{
+	text-align: left;
+}
+.service li.nav.col-md-4 a{
 	text-align: center;
 	font-size: 18px;
 	text-transform: capitalize;
-	/*color: #fff;*/
 	color: #796161;
-}
-.service.tabs .tab-content{
-	font-size: 18px;
-	color: #000;
-	padding: 5px;
-	padding-bottom: 0px;
-}
-td.panel a.collapsed img{
-	/*background: none;*/
-	border: none;
-}
-td.panel a img{
-	/*border: 2px solid #000;
-	border-radius: 5px;*/
-}
-td.panel a{
-	/*background: #ccc;*/
-	display: block;
-	padding: 20px 0;
-	text-decoration: none;
-}
-.service td a{
-	background: #ccc;
-	border-bottom: none;
-	width: 250px;
-	z-index: 1;
-	position: relative;
-}
-.service td a.collapsed{
-	background: transparent;
-	border: none;
-}
-.service.tabs td.panel a.collapsed .name{
-	color: #796161;
-}	
-.service.tabs .tab-content{
-	min-height: 150px;
-	padding-top: 0;
-}
-.service.tabs .tab-content.collapsing{
-	position: absolute;
-	/*min-height: 150px;*/
-}
-.service.tabs .inner{
-	background: #ccc;
-}
-.service.tabs .tab-content.collapsing .inner{
-	background: transparent;
-}
-.service.tabs .inner,
-.service.tabs .tab-content.collapsing .inner{
-	position: absolute;
-	width: 68.8%;
-	padding: 50px 100px;
-	min-height: 149px;
-	left: 11.7%;
-	margin-top: -1px;
-	z-index: 0;
 }
 /*Pagina Noticias*/
 .news-detail .news-images{
