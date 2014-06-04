@@ -90,15 +90,19 @@ nav .container-fluid > div{
 	position: relative;
 }
 .slider #bx-pager img{
-width: 125px;
-height: 94px;
-padding-top: 5px;
+	width: 125px;
+	height: 94px;
+	padding-top: 5px !important;
+}
+#bx-pager a:hover{
+    background: url(../img/dynaflux-selected.png) no-repeat;
+    /*margin-top: 25px;*/
 }
 section .slider{
 	/*background: url(../img/background-slide.png) no-repeat transparent;*/
 	display: inline-block;
 	background: #E9E9E9;
-	padding: 5px;
+	padding: 5px !important;
 	height: 470px;
 	margin-bottom: 30px;
 }
@@ -139,18 +143,20 @@ section .slider{
 	height: 422px;
 	overflow: hidden;
 	background: #fff;
-	padding: 0px 0px 5px 0;
+	/*padding: 5px 0px 0px 0 !important; */
 	margin-left: 5px;
 	width: 14%;
 }
+#bx-pager >div{
+	position: relative;
+	top: 10px;
+}
 #bx-pager a{
-	padding: 5px 0 5px 15px;
+	padding: 0px 0 5px 15px;
     display: inherit;
     color: #8d2c2f;
     font-family: 'Titillium Web';
-}
-#bx-pager a:hover{
-    background: url(../img/dynaflux-selected.png) no-repeat;
+    margin-top: 5px !important;
 }
 #bx-pager a span{
 	padding: 0 2px;
