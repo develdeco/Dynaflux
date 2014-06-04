@@ -104,7 +104,7 @@ section .slider{
 }
 .slider .bx-wrapper {
 	float: left;
-	width: 72%;
+	width: 85%;
 	margin-bottom: 10px;
 }
 .slider .bxslider li{
@@ -124,6 +124,10 @@ section .slider{
 	text-transform: capitalize;
 	font-size: 22px;
 }
+.bx-wrapper img {
+	width: 100%;
+	height: 450px;
+}
 .slider .bx-wrapper .bx-viewport{
 	background: none;
 	box-shadow: none;
@@ -137,7 +141,7 @@ section .slider{
 	background: #fff;
 	padding: 0px 0px 5px 0;
 	margin-left: 5px;
-	width: 27.5%;
+	width: 14%;
 }
 #bx-pager a{
 	padding: 5px 0 5px 15px;
