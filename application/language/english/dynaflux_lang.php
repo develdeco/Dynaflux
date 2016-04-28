@@ -1,6 +1,6 @@
 <?php
 //Home
-$lang['ProjectsBlockTitle'] = 'Use cases';
+$lang['ProjectsBlockTitle'] = 'Success cases';
 $lang['ProductsBlockTitle'] = 'Featured products';
 
 //News

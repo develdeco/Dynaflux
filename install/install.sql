@@ -272,8 +272,8 @@ CREATE TABLE `file` (
 
 /*!40000 ALTER TABLE `file` DISABLE KEYS */;
 INSERT INTO `file` (`id`,`path`,`name`,`type`) VALUES 
-('FILE1','brochure dynaflux.pdf','Brochure Dynaflux','pdf'),
-('FILE2','brochure eec.pdf','Brochure EEC','pdf'),
+('FILE1','brochure_dynaflux.pdf','Brochure Dynaflux','pdf'),
+('FILE2','brochure_eec.pdf','Brochure EEC','pdf'),
 ('FILE3','180272_webone_manual-sp.pdf','Manual Web One','pdf'),
 ('FILE4','brochure_serie_ew.pdf','Brochure Serie EW','pdf'),
 ('FILE5','180275-sp_webonebrochure.pdf','Brochure Web One','pdf'),
@@ -325,7 +325,7 @@ INSERT INTO `file` (`id`,`path`,`name`,`type`) VALUES
 ('FILE52','brochure_serie_ehhv.pdf','Brochure Serie EHHV','pdf'),
 ('FILE53','series_pw.pdf','Brochure Series PW/PW-F','pdf'),
 ('FILE54','brochure_serie_ek.pdf','Brochure Serie EK','pdf'),
-('FILE55','triptico dynaflux.pdf','Triptico Dynaflux','pdf'),
+('FILE55','triptico_dynaflux.pdf','Triptico Dynaflux','pdf'),
 ('FILE56','flyer chemco.jpg','Flyer Chemco','jpg');
 /*!40000 ALTER TABLE `file` ENABLE KEYS */;
 
@@ -1064,7 +1064,7 @@ INSERT INTO `menu_item` (`id`,`menuId`,`parentId`,`name`,`level`,`type`,`url`,`w
 ('MI2','MENU1',NULL,'Equipos',1,'path','equipos',2),
 ('MI3','MENU1',NULL,'Sistemas',1,'path','sistemas',3),
 ('MI4','MENU1',NULL,'Servicios',1,'path','servicios',4),
-('MI5','MENU1',NULL,'Casos de uso',1,'path','casos-de-uso',5),
+('MI5','MENU1',NULL,'Casos de éxito',1,'path','casos-de-exito',5),
 /*('MI6','MENU1',NULL,'Participaciones',1,'path','noticias',6),*/
 ('MI7','MENU1',NULL,'Contáctenos',1,'path','contacto',7),
 ('MI9','MENU2',NULL,'Controladores',1,'category',NULL,5),
@@ -1343,7 +1343,7 @@ INSERT INTO `path` (`id`,`url`,`type`,`reference`,`isContent`) VALUES
 ('PATH62','equipos','page','equipment',NULL),
 ('PATH63','sistemas','page','systems',NULL),
 ('PATH64','servicios','page','services',NULL),
-('PATH65','casos-de-uso','page','projects',NULL),
+('PATH65','casos-de-exito','page','projects',NULL),
 ('PATH66','noticias','page','news',NULL),
 ('PATH67','contacto','page','contact',NULL),
 ('PATH68','bombas-centrifugas/panworld/serie-ps-&-ps-f','equipment','PROD19',0),

@@ -18,7 +18,7 @@
 <section class="projects-finished nice-block">
 	<h2><?php echo $this->lang->line('ProjectsBlockTitle') ?></h2>
 	<?php $this->load->view('front/block/projects_short', array('projects'=>$completedProjects)) ?>
-	<p><a href="<?php echo Tools::Href($projects_path->GetUrl()) ?>">Ver mas casos de uso</a> »</p>
+	<p><a href="<?php echo Tools::Href($projects_path->GetUrl()) ?>">Ver mas casos de éxito</a> »</p>
 </section>
 <!--section class="latest-news nice-block">
 	<h2><?php echo $this->lang->line('NewsBlockTitle') ?></h2>

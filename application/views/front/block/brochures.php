@@ -1,7 +1,7 @@
 <ul class="brochures-block">
 	<?php foreach($downloads as $key=>$download): ?>
 	<?php if($key+1>count($downloads)-2): ?>
-    <li class="last-item">
+    <li> <!--class="last-item"-->
     <?php else: ?>
     <li>
     <?php endif ?>
