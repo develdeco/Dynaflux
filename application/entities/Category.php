@@ -2,8 +2,8 @@
 
 class Category extends Entity
 {
-	var $id;
 	var $name;
+	var $description;
 
 	public function GetName()
 	{
@@ -13,5 +13,15 @@ class Category extends Entity
 	public function SetName($name)
 	{
 	    $this->name = $name;
+	}
+
+	public function GetDescription()
+	{
+	    return $this->description;
+	}
+	
+	public function SetDescription($description)
+	{
+	    $this->description = $description;
 	}
 }

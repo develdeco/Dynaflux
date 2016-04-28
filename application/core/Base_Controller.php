@@ -3,7 +3,7 @@
 /* Form Class for Admin */
 class Base_Controller extends CI_Controller
 {
-    protected $data;
+    var $data;
     protected static $CI;
 
     function __construct()
@@ -13,25 +13,16 @@ class Base_Controller extends CI_Controller
 
         $this->data = array();
 
-        $this->load->library('alerts');
         $this->data['alerts'] = Alerts::GetAlerts();
     }
 
-    /*
-     * Set Context Variables 
-     * Lang, Params and load Lang Files according to session variables and URL Params
-     * args[n] = lang
-     */
     function SetContext($args = array())
     {
-        if (count($args) >= 1)
-        {
-            $this->context->SetParamsUrl('');
-            $this->context->SetParamsList(array());
-
+        if (count($args) >= 0)
+        {            
             $langs = Tools::GetLangs();
-
-            if (count($args) >= 2)
+                
+            if (count($args) >= 1)
             {
                 $lang = $args[count($args)-1];
                 $params = array();
@@ -57,27 +48,28 @@ class Base_Controller extends CI_Controller
                 $this->data['paramsList'] = $params;
                 $this->context->SetParamsList($params);
 
-                $params = implode('/', $params);
+                $params = !empty($params) ? implode('/', $params) : '';
                 $this->data['paramsURL'] = $params;
                 $this->context->SetParamsUrl($params);
             }
             else
             {
-                if(in_array($args[0], $langs))
-                {
-                    $this->data['langCode'] = $args[0];
-                    $this->context->SetLangCode($this->data['langCode']);
-                }
-                else
-                {
-                    $this->data['paramsList'] = $args;
-                    $this->context->SetParamsList($args);
-
-                    $this->data['paramsURL'] = $args[0];
-                    $this->context->SetParamsURL($args[0]);
-                }
+                $this->context->SetParamsUrl('');
+                $this->context->SetParamsList(array());
             }
         }
+        
+        switch($this->context->GetLangCode())
+        {
+            case 'es':
+                setlocale(LC_TIME,'es_ES');
+                $this->lang->load('dynaflux', 'spanish'); 
+            break;
+            case 'en':
+                setlocale(LC_TIME,'en_US');
+                $this->lang->load('dynaflux', 'english'); 
+            break;
+        }   
     }
     
 }

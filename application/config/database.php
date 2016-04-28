@@ -49,9 +49,12 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'df_usr';
+/*$db['default']['username'] = 'dynaflux_user';
+$db['default']['password'] = 'drc61h$Mp8ht';
+$db['default']['database'] = 'dynaflux_new';*/
+$db['default']['username'] = 'dfusr';
 $db['default']['password'] = 'dynflx';
-$db['default']['database'] = 'df_db';
+$db['default']['database'] = 'dfdb';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

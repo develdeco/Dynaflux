@@ -1,0 +1,21 @@
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(application/errors/error_php.php): failed to open stream: No such file or directory in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(application/errors/error_php.php): failed to open stream: No such file or directory in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(): Failed opening 'application/errors/error_php.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(application/errors/error_php.php): failed to open stream: No such file or directory in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(application/errors/error_php.php): failed to open stream: No such file or directory in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Warning:  include(): Failed opening 'application/errors/error_php.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dynaflux/public_html/system/core/Exceptions.php on line 182
+[14-Dec-2015 22:22:47 UTC] PHP Fatal error:  require(): Failed opening required 'application/libraries/Tools.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/dynaflux/public_html/application/config/routes.php on line 44
+[15-Dec-2015 00:52:21 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:52:28 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:52:57 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:55:36 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:55:37 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:55:38 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:55:38 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:55:40 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 00:57:25 UTC] PHP Fatal error:  Call to a member function GetPath() on a non-object in /home/dynaflux/public_html/application/views/front/block/brochures.php on line 8
+[15-Dec-2015 01:05:28 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dynaflux/public_html/application/views/front/block/projects_extended.php on line 19
+[15-Dec-2015 01:05:36 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dynaflux/public_html/application/views/front/block/projects_extended.php on line 19
+[15-Dec-2015 01:05:51 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dynaflux/public_html/application/views/front/block/projects_extended.php on line 19
+[15-Dec-2015 01:06:47 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dynaflux/public_html/application/views/front/entity/project.php on line 41
+[15-Dec-2015 01:18:58 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dynaflux/public_html/application/views/front/entity/project.php on line 41

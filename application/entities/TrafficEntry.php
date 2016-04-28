@@ -3,10 +3,12 @@
 class TrafficEntry extends Entity
 {
 	var $id;
-	var $EntityId;
-	var $EntityType;
+	var $reference;
+	var $title;
 	var $ip;
 	var $date;
+
+	var $path;
 
 	public function GetEntityId()
 	{
@@ -18,14 +20,14 @@ class TrafficEntry extends Entity
 	    $this->entityId = $entityId;
 	}
 
-	public function GetEntityType()
+	public function GetTitle()
 	{
-	    return $this->entityType;
+	    return $this->title;
 	}
 	
-	public function SetEntityType($entityType)
+	public function SetTitle($title)
 	{
-	    $this->entityType = $entityType;
+	    $this->title = $title;
 	}
 
 	public function GetIp()
@@ -48,4 +50,23 @@ class TrafficEntry extends Entity
 	    $this->date = $date;
 	}
 
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
+	}
+
+	public function GetReference()
+	{
+	    return $this->reference;
+	}
+	
+	public function SetReference($reference)
+	{
+	    $this->reference = $reference;
+	}
 }

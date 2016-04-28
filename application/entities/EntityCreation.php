@@ -3,41 +3,32 @@
 class EntityCreation extends Entity
 {
 	var $id;
-	var $EntityId;
-	var $EntityType;
-	var $EntityTitle;
+	var $reference;
+	var $title;
 	var $date;
 
-	public function GetEntityId()
+	var $path;
+
+	public function GetReference()
 	{
-	    return $this->EntityId;
+	    return $this->reference;
 	}
 	
-	public function SetEntityId($EntityId)
+	public function SetReference($reference)
 	{
-	    $this->EntityId = $EntityId;
+	    $this->reference = $reference;
 	}
 
-	public function GetEntityType()
+	public function GetTitle()
 	{
-	    return $this->EntityType;
+	    return $this->title;
 	}
 	
-	public function SetEntityType($EntityType)
+	public function SetTitle($title)
 	{
-	    $this->EntityType = $EntityType;
+	    $this->title = $title;
 	}
 
-	public function GetEntityTitle()
-	{
-	    return $this->EntityTitle;
-	}
-	
-	public function SetEntityTitle($EntityTitle)
-	{
-	    $this->EntityTitle = $EntityTitle;
-	}
-	
 	public function GetDate()
 	{
 	    return $this->date;
@@ -46,5 +37,15 @@ class EntityCreation extends Entity
 	public function SetDate($date)
 	{
 	    $this->date = $date;
+	}
+
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
 	}
 }

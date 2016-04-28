@@ -2,7 +2,7 @@
 
 class Normal_Model extends Base_Model
 {
-	function insert_entity($entity)
+	function InsertEntity($entity)
     {
         if($this->table != null)
         {
@@ -10,7 +10,7 @@ class Normal_Model extends Base_Model
         }
     }
 
-    function insert_entities($entities)
+    function InsertEntityList($entities)
     {
         if($this->table != null && is_array($entities))
         {
@@ -18,13 +18,13 @@ class Normal_Model extends Base_Model
         }
     }
 
-    function remove_entity($id)
+    function RemoveEntity($id)
     {
         if($this->table != null)
             return $this->db->delete($this->table, array($this->id_name => $id));
     }
 
-    function update_entity($entity)
+    function UpdateEntity($entity)
     {
         if($this->table != null)
         {
@@ -34,7 +34,7 @@ class Normal_Model extends Base_Model
     }
 
     /** update just a column of a specific by its id entity*/
-    function update_entity_column($entity_id, $column, $value)
+    function UpdateEntityColumn($entity_id, $column, $value)
     {
         if($this->table != null)
         {
@@ -42,44 +42,40 @@ class Normal_Model extends Base_Model
         }
     }
     
-    function get_entity($id, $relationships = array())
+    function GetEntity($id, $relationships = array())
     {
-        if($this->table != null) 
-        {
-            $id_name = $this->id_name;
-            $entity = array_pop($this->db->get_where($this->table, array("$id_name" => $id))->result($this->entity_class));
-            if(method_exists($this, 'add_relationships')) $this->add_relationships($entity, $relationships);
-            return $entity;
-        }
+        $entity = array_pop($this->db->get_where($this->table, array('id' => $id))->result($this->entityClass));
+
+        if(!empty($relationships) && method_exists($this, 'OnRelationship')) $this->AddRelationships($entity, $relationships);
+
+        return $entity;
     }
 
-    function get_entities($relationships = array())
+    function GetEntityList($relationships = array())
     {
-        if($this->table != null) 
-        {
-            $this->db->order_by('last_modified', 'desc');
-            $entities = $this->db->get($this->table)->result($this->entity_class);
-            if(method_exists($this, 'add_relationships')) $this->add_relationships($entities, $relationships);
-            return $entities;
-        }
+        $entityList = $this->db->get($this->table)->result($this->entityClass);
+        
+        if(method_exists($this, 'OnRelationship')) $this->AddRelationships($entityList, $relationships);
+        
+        return $entityList;
     }
 
-    function get_entities_by_weight($relationships = array())
+    function GetEntityListByWeight($relationships = array())
     {
-        $this->db->order_by("weight", "asc");
-        $entities = $this->db->get($this->table)->result($this->entity_class);
-        if(method_exists($this, 'add_relationships')) $this->add_relationships($entities, $relationships);
-        return $entities;
+        $this->db->order_by('weight', 'asc');
+        $entityList = $this->db->get($this->table)->result($this->entityClass);
+        if(method_exists($this, 'OnRelationship')) $this->AddRelationships($entityList, $relationships);
+        return $entityList;
     }
 
-    function add_relationships(&$entities, $relationships)
+    function AddRelationships(&$entityList, $relationships)
     {
         if(empty($relationships))
             return;
 
-        if(!is_array($entities))
+        if(!is_array($entityList))
         {
-            $entities = array($entities);
+            $entityList = array($entityList);
             $singular = true;
         }
         else
@@ -87,17 +83,17 @@ class Normal_Model extends Base_Model
             $singular = false;
         }
 
-        foreach($entities as &$entity)
+        foreach($entityList as &$entity)
         {
             if(!empty($entity))
             {
-                $this->on_relationship($entity, $relationships);
+                $this->OnRelationship($entity, $relationships);
             }
         }
 
         if($singular)
         {
-            $entities = array_pop($entities);
+            $entityList = array_pop($entityList);
         }
     }
 }

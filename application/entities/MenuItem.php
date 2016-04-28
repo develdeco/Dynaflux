@@ -8,9 +8,11 @@ class MenuItem extends Entity
 	var $name;
 	var $level;
 	var $type;
-	var $link;
+	var $url;
+	var $weight;
 	
 	var $items;
+	var $path;
 
 	public function GetMenuId()
 	{
@@ -62,14 +64,24 @@ class MenuItem extends Entity
 	    $this->type = $type;
 	}
 
-	public function GetLink()
+	public function GetUrl()
 	{
-	    return $this->link;
+	    return $this->url;
 	}
 	
-	public function SetLink($link)
+	public function SetUrl($url)
 	{
-	    $this->link = $link;
+	    $this->url = $url;
+	}
+
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
 	}
 
 	public function GetItems()
@@ -80,5 +92,15 @@ class MenuItem extends Entity
 	public function SetItems($items)
 	{
 	    $this->items = $items;
+	}
+
+	public function GetWeight()
+	{
+	    return $this->weight;
+	}
+	
+	public function SetWeight($weight)
+	{
+	    $this->weight = $weight;
 	}
 }

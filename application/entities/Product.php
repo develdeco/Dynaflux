@@ -4,14 +4,16 @@ class Product extends Entity
 {
 	var $id;
 	var $title;
-	var $description;
+	var $detail;
+	var $detailFilePath;
 	var $type;
 	var $state;
-
+	
 	var $image;
 	var $manuales;
 	var $brochures;
-
+	var $path;
+	
 	public function GetTitle()
 	{
 	    return $this->title;
@@ -22,14 +24,24 @@ class Product extends Entity
 	    $this->title = $title;
 	}
 
-	public function GetDescription()
+	public function GetDetail()
 	{
-	    return $this->description;
+	    return $this->detail;
 	}
 	
-	public function SetDescription($description)
+	public function SetDetail($detail)
 	{
-	    $this->description = $description;
+	    $this->detail = $detail;
+	}
+
+	public function GetDetailFilePath()
+	{
+	    return $this->detailFilePath;
+	}
+	
+	public function SetDetailFilePath($detailFilePath)
+	{
+	    $this->detailFilePath = $detailFilePath;
 	}
 
 	public function GetType()
@@ -69,6 +81,19 @@ class Product extends Entity
 	
 	public function SetImage($image)
 	{
-	    $this->image = $image;
+		if(!empty($image))
+	    	$this->image = $image;
+	    else
+	    	$this->image = new Image();
+	}
+
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
 	}
 }

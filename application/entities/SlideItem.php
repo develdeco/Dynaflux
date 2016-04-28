@@ -3,61 +3,93 @@
 class SlideItem extends Entity
 {
 	var $id;
-	var $title;
-	var $ReferenceId;
-	var $ReferenceType;
+	var $sliderId;
+	var $pagerTitle;
+	var $slideTitle;
+	var $summary;
+	var $summaryFilePath;
+	var $path;
+	var $weight;
 
-	var $largeImage;
-	var $smallImage;
+	var $photo;
 
-	public function GetTitle()
+	public function GetSliderId()
 	{
-	    return $this->title;
+	    return $this->sliderId;
 	}
 	
-	public function SetTitle($title)
+	public function SetSliderId($sliderId)
 	{
-	    $this->title = $title;
-	}
-	
-	public function GetReferenceId()
-	{
-	    return $this->ReferenceId;
-	}
-	
-	public function SetReferenceId($ReferenceId)
-	{
-	    $this->ReferenceId = $ReferenceId;
+	    $this->sliderId = $sliderId;
 	}
 
-	public function GetReferenceType()
+	public function GetPagerTitle()
 	{
-	    return $this->ReferenceType;
+	    return $this->pagerTitle;
 	}
 	
-	public function SetReferenceType($ReferenceType)
+	public function SetPagerTitle($pagerTitle)
 	{
-	    $this->ReferenceType = $ReferenceType;
+	    $this->pagerTitle = $pagerTitle;
 	}
 
-	public function GetLargeImage()
+	public function GetSlideTitle()
 	{
-	    return $this->largeImage;
+	    return $this->slideTitle;
 	}
 	
-	public function SetLargeImage($largeImage)
+	public function SetSlideTitle($slideTitle)
 	{
-	    $this->largeImage = $largeImage;
+	    $this->slideTitle = $slideTitle;
 	}
 
-	public function GetSmallImage()
+	public function GetSummary()
 	{
-	    return $this->smallImage;
+	    return $this->summary;
 	}
 	
-	public function SetSmallImage($smallImage)
+	public function SetSummary($summary)
 	{
-	    $this->smallImage = $smallImage;
+	    $this->summary = $summary;
 	}
 
+	public function GetSummaryFilePath()
+	{
+	    return $this->summaryFilePath;
+	}
+	
+	public function SetSummaryFilePath($summaryFilePath)
+	{
+	    $this->summaryFilePath = $summaryFilePath;
+	}
+
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
+	}
+
+	public function GetWeight()
+	{
+	    return $this->weight;
+	}
+	
+	public function SetWeight($weight)
+	{
+	    $this->weight = $weight;
+	}
+
+	public function GetPhoto()
+	{
+	    return $this->photo;
+	}
+	
+	public function SetPhoto($photo)
+	{
+	    $this->photo = $photo;
+	}
 }

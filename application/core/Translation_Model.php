@@ -40,7 +40,7 @@ class Translation_Model extends Base_Model
         $this->db->update($this->table, $entity, array('id' => $entity->GetId()));
     }
 
-    /** update just a column of a specific by its id entity*/
+    /** update just a column of a specific by its id entity **/
     function UpdateEntityColumn($entity_id, $column, $value)
     {
         return $this->db->where('id', $entity_id)->set($column, $value)->update($this->table);
@@ -50,12 +50,12 @@ class Translation_Model extends Base_Model
     {
         $entity = array_pop($this->db->get_where($this->table, array('id' => $id))->result($this->entityClass));
 
-        if(method_exists($this, 'OnRelationship')) $this->AddRelationships($entity, $relationships);
+        if(!empty($relationships) && method_exists($this, 'OnRelationship')) $this->AddRelationships($entity, $relationships);
 
         return $entity;
     }
 
-    function GetEntityList($relationships = array())
+    function GetEntityList($properties = array(), $relationships = array(), $joinColumn = 'id')
     {
     	$CI =& get_instance();
 
@@ -63,12 +63,34 @@ class Translation_Model extends Base_Model
 
     	$this->db->select('e.*');
     	$this->db->from($this->table.' e');
-    	$this->db->join('translation t', 't.entityId = e.id');
+    	$this->db->join('translation t', 't.entityId = e.'.$joinColumn);
     	$this->db->where('t.langCode', $langCode);
-    	$this->db->where('t.entityType', $this->entityClass);
-        $this->db->order_by('e.lastModified', 'desc');
+        //$this->db->order_by('e.lastModified', 'desc');
 
-        $entityList = $this->db->get()->result($this->entityClass);
+        if(!empty($properties))
+        {
+            if(isset($properties['limit']))
+                $this->db->limit($properties['limit']);
+
+            if(isset($properties['where']))
+                foreach($properties['where'] as $col => $val)
+                    $this->db->where('e.'.$col, $val);
+
+            if(isset($properties['wherenot']))
+                foreach($properties['wherenot'] as $col => $val)
+                    $this->db->where('e.'.$col.' !=', $val);    
+
+            if(isset($properties['orderBy']))
+            {
+                $orderBy = str_replace('(', '(e.', $properties['orderBy']);
+                $this->db->order_by($orderBy);
+            }
+
+            if(isset($properties['groupBy']))
+                $this->db->group_by('e.'.$properties['groupBy']);
+        }
+        
+        $entityList = $this->db->get()->result($this->entityClass); 
         
         if(method_exists($this, 'OnRelationship')) $this->AddRelationships($entityList, $relationships);
         

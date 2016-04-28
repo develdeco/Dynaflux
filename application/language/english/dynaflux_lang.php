@@ -1,17 +1,22 @@
 <?php
 //Home
-$lang['ProjectsBlockTitle'] = 'completed projects';
-$lang['ProductsBlockTitle'] = 'oustanding products';
+$lang['ProjectsBlockTitle'] = 'Use cases';
+$lang['ProductsBlockTitle'] = 'Featured products';
 
 //News
-$lang['NewsBlockTitle'] = 'latest news';
+$lang['NewsBlockTitle'] = 'Participations';
 
 //Contact
-$lang['OfficesTabTitle'] = 'offices';
-$lang['ContactTabTitle'] = 'contact';
+$lang['OfficesTabTitle'] = 'Offices';
+$lang['ContactTabTitle'] = 'Contact';
 $lang['FormNameLabel'] = 'Name';
 $lang['FormEmailLabel'] = 'Email';
 $lang['FormSubjectLabel'] = 'Subject';
+$lang['FormContactLabel'] = 'Contact';
+$lang['FormContentLabel'] = 'Message';
 $lang['FormSendButton'] = 'Send';
+
+$lang['Of'] = 'of';
+$lang['CaptchaError'] = 'Captcha is empty';
 
 ?>

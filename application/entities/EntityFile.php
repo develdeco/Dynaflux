@@ -1,48 +1,40 @@
 <?php
 
-class EntityFile
+class EntityFile extends Entity
 {
-	var $id_n2n;
-	var $id_entity;
-	var $id_file;
+	var $id;
+	var $idEntity;
+	var $idFile;
+	//Una entidad puede tener secciones de imagenes (ejm: galeria, slideshow, carrousel, etc).
+	//Esta propiedad tiene como propósito diferenciar y agrupar las imágenes
 	var $group;
 
-	public function getId_n2n()
+	public function GetIdEntity()
 	{
-	    return $this->id_n2n;
+	    return $this->idEntity;
 	}
 	
-	public function setId_n2n($id_n2n)
+	public function SetIdEntity($idEntity)
 	{
-	    $this->id_n2n = $id_n2n;
+	    $this->idEntity = $idEntity;
 	}
 
-	public function getId_entity()
+	public function GetIdFile()
 	{
-	    return $this->id_entity;
+	    return $this->idFile;
 	}
 	
-	public function setId_entity($id_entity)
+	public function SetIdFile($idFile)
 	{
-	    $this->id_entity = $id_entity;
+	    $this->idFile = $idFile;
 	}
 
-	public function getId_file()
-	{
-	    return $this->id_file;
-	}
-	
-	public function setId_file($id_file)
-	{
-	    $this->id_file = $id_file;
-	}
-
-	public function getGroup()
+	public function GetGroup()
 	{
 	    return $this->group;
 	}
 	
-	public function setGroup($group)
+	public function SetGroup($group)
 	{
 	    $this->group = $group;
 	}

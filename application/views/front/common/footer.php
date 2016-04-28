@@ -1,56 +1,88 @@
 			</div>
+			<footer class="row">
+				
+				<section class="shadow"></section>
+
+				<?php if($prefooter): ?>
+				<section class="prefooter col-md-12">
+					<div class="col-md-3 shadow-right">
+						<div class="bottom-menu">
+							<div class="title">Productos</div>
+							<ul class="nav">
+								<?php foreach($oustandingProducts as $product): ?>
+								<li>
+									<a href="<?php echo Tools::Href($product->GetPath()->GetUrl()) ?>"
+										title="<?php echo $product->GetTitle() ?>">
+										<?php echo $product->GetTitle() ?>
+									</a>
+								</li>
+								<?php endforeach ?>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 shadow-edges">
+						<div class="bottom-menu">
+							<div class="title">Casos de uso</div>
+							<ul class="nav">
+								<?php foreach($completedProjects as $project): ?>
+								<li>
+									<a href="<?php echo Tools::Href($project->GetPath()->GetUrl()) ?>"
+										title="<?php echo $project->GetName() ?>">
+										<?php echo $project->GetName() ?>
+									</a>
+								</li>
+								<?php endforeach ?>
+							</ul>
+						</div>
+					</div>
+					<!--div class="col-md-3 shadow-edges">
+						<div class="bottom-menu">
+							<div class="title">Novedades</div>
+							<ul class="nav">
+								<?php foreach($newsList as $news): ?>
+								<li>
+									<a href="<?php echo Tools::Href($news->GetPath()->GetUrl()) ?>"
+										title="<?php echo $news->GetTitle() ?>">
+										<?php echo $news->GetTitle() ?>
+									</a>
+								</li>
+								<?php endforeach ?>
+							</ul>
+						</div>
+					</div-->
+					<div class="col-md-3 shadow-edges">
+						<div class="bottom-menu">
+							<div class="title">Brochures</div>
+							<ul class="nav">
+								<?php foreach($downloads as $download): ?>
+								<li>
+									<a href="<?php echo Tools::FileUrl($download->GetFile()->GetPath()) ?>"
+										title="<?php echo $download->GetTitle() ?>" target="_blank">
+										<?php echo $download->GetTitle() ?>
+									</a>
+								</li>
+								<?php endforeach ?>
+							</ul>
+						</div>
+					</div>
+					<!-- Fill -->
+					<div class="col-md-3 shadow-left"><div class="bottom-menu"></div></div>
+				</section>
+				<?php endif ?>
+
+				<section class="footer">
+					<div class="col-md-12">
+						<div class="footer-bottom">
+							<p>
+								<a href="<?php echo Tools::Href('') ?>">Inicio</a>&nbsp;&nbsp;|&nbsp;
+								<a href="<?php echo Tools::Href('sitemap') ?>">Sitemap</a>&nbsp;&nbsp;|&nbsp;
+								<a href="<?php echo Tools::Href($termsPath->GetUrl()) ?>">Terminos y Condiciones</a>
+							</p>
+							<p style="margin-bottom:0">©2015 DYNAFLUX S.A Todos los derechos reservados</p>
+						</div>
+					</div>
+				</section>				
+			</footer>
 		</section>
-		<footer>
-			<section class="prefooter">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-5 .col-md-offset-3">
-							<span class="title">mas vistos</span>
-							<ul class="nav">
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">sit amet, consectetur</a></li>
-								<li><a href="#">adipisicing elit, sed do</a></li>
-								<li><a href="#">eiusmod tempor</a></li>
-								<li><a href="#">incididunt ut labore</a></li>
-							</ul>
-						</div>
-						<div class="col-md-5 .col-md-offset-3">
-							<span class="title">recientes</span>
-							<ul class="nav">
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">sit amet, consectetur</a></li>
-								<li><a href="#">adipisicing elit, sed do</a></li>
-								<li><a href="#">eiusmod tempor</a></li>
-								<li><a href="#">incididunt ut labore</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>	
-			</section>
-			<section class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 .col-md-offset-3">
-							dynaflux@dynaflux.com.pe
-							T.511 361-6868
-							Oficina Central:
-							Calle Las Cascadas 325,
-							Urb. La Encalada - La Molina
-							Área Técnica e Ingenieria:
-							Av. Separadora Industrial 2964 - Ate
-						</div>
-						<div class="col-md-4 .col-md-offset-3">
-							<div class="social">
-								<ul class='nav navbar-nav'>
-									<li class='facebook'><a href="#" title='facebook'></a></li>
-									<li class='twitter'><a href="#" title='twitter'></a></li>
-									<li class='youtube'><a href="#" title='youtube'></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</footer>
 	</body>
 </html>	

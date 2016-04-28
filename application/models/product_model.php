@@ -6,17 +6,38 @@ class Product_Model extends Translation_Model
 	{
 		parent::__construct();
         $this->table = 'product';
-        $this->entity_class = 'Product';
+        $this->entityClass = 'Product';
 	}
 
-	function OnRelationship(&$entity, $relationships)
+	function OnRelationship(&$product, $relationships)
 	{
-		
+		foreach($relationships as $relationship)
+		{
+			switch($relationship)
+			{
+				case 'path':
+					$path = array_pop($this->db->get_where('path', array('reference' => $product->GetId()))->result('Path'));
+					$product->SetPath($path);
+					break;
+				case 'image':
+					$this->load->model('image_model');
+					$image = array_pop($this->image_model->GetGroupImagesByEntity($product->GetId(), 'image'));
+					$product->SetImage($image);
+					break;
+				case 'detail':
+					$product->SetDetail(Tools::GetFileContent($product->GetDetailFilePath()));
+					break;
+			}
+		}
 	}
 
-	function GetOustanding()
+	function GetOustanding($limit, $adds = array())
 	{
-		$this->db->limit(4);
-		return $this->db->get_where($this->table, array('state' => 'oustanding'))->result($this->entity_class);
+		$rel = array_merge(array('path'),$adds);
+
+		return $this->GetEntityList(array(
+				'limit' => $limit,
+				'where' => array('state' => 'oustanding')
+			), $rel);
 	}
 }

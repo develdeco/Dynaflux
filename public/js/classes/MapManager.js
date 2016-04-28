@@ -42,7 +42,7 @@ MapManager.prototype.showMarker = function(lat, lon)
     var marker = this.markers[MD5.generate(lat+','+lon)];
 
     if(marker === undefined)
-        marker = this.addMarker(lar, lon);
+        marker = this.addMarker(lat, lon);
 
     if(this.map === null)
     {
@@ -52,7 +52,7 @@ MapManager.prototype.showMarker = function(lat, lon)
     else
         this.map.setCenter(marker.getPosition());
     
-    marker.setMap(map);
+    marker.setMap(this.map);
 }
 
 // Sets the map on all markers in the array.

@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html>
 	<head> 
-	<meta charset="UTF-8" />
-	<title>Dynaflux Homepage</title>
-	<!-- 	<meta name="viewport" content="width=device-width" /> -->
-	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:600,700&amp;subset=latin" media="all">
-	<link rel="stylesheet" type="text/css" media="all" href="css/vendor/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/vendor/bootstrap-theme.css" />
-	<link href="js/vendor/bxslider/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/global.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/vendor/bxslider/jquery.bxslider.min.js"></script>
-	<script src="js/main.js"></script>
+	<meta charset="UTF-8">
+	<title><?php echo empty($topActive)?'':$topActive.' | ' ?>Dynaflux</title>
+	<!-- meta name="viewport" content="width=device-width" /-->
+	<link rel="shortcut icon" href="<?php echo Tools::WebImageUrl('favicon.png') ?>" type="image/x-icon">
+	<!-- link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:600,700&amp;subset=latin" media="all" /-->
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo Tools::PublicUrl('css/vendor/bootstrap.min.css') ?>">
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo Tools::PublicUrl('css/vendor/bootstrap-theme.min.css') ?>">
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo Tools::PublicUrl('css/global.css') ?>">
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
+	<script src="<?php echo Tools::PublicUrl('js/vendor/jquery-1.11.0.min.js') ?>"></script>
+	<script src="<?php echo Tools::PublicUrl('js/vendor/bootstrap.min.js') ?>"></script>
 	</head>
 	<body>
-		<header class='header'>
-			<section class="container">
-				<section class='header-first'>
-					<div class="logo"><a href="#"><img src="img/logo.png" alt=""></a></div>
+		<section class="container" style="border: 1px solid grey">
+			<header class='header row'>
+				<section class='header-first col-md-12'>
+					<div class="logo"><a href="<?php echo base_url() ?>"><img src="<?php echo Tools::WebImageUrl('logo.png') ?>" alt=""></a></div>
 					<div class="social">
-						<ul class='nav navbar-nav'>
+						<!--ul class='nav navbar-nav'>
 							<li class='facebook'><a href="#" title='facebook'></a></li>
 							<li class='twitter'><a href="#" title='twitter'></a></li>
 							<li class='youtube'><a href="#" title='youtube'></a></li>
-						</ul>
+						</ul-->
 					</div>
 				</section>
-				<section class='header-second'>
+				<section class='header-second col-md-12'>
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="container-fluid">
 						    <!-- Collect the nav links, forms, and other content for toggling -->
 						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							    <ul class="nav navbar-nav">
-							        <li><a href="home.html">inicio</a></li>
-							        <li><a href="#">quienes somos</a></li>
-							        <li><a href="#">servicios</a></li>
-							        <li><a href="equipos.html">equipos</a></li>
-							        <li class="active"><a href="maquinarias.html">maquinarias</a></li>
-							        <li><a href="#">noticias</a></li>
-							        <li><a href="#">contactenos</a></li>
+							    	<li class="<?php echo $currentPath->GetUrl() == '' ? 'active' : '' ?>">
+							    		<a href="<?php echo base_url() ?>" style="padding:4px 10px">
+							    			<img src="<?php echo Tools::WebImageUrl('home_icon.png') ?>" alt="" height="22" weight="30">
+							    		</a>
+							    	</li>
+							    	<?php foreach($topMenu as $item): ?>
+							        <li class="<?php echo $item->GetUrl() == $topActive || $item->GetUrl() == $currentPath->GetUrl() ? 'active' : '' ?>">
+							        	<a href="<?php echo Tools::Href($item->GetUrl()) ?>">
+							        	<?php echo $item->GetName() ?>
+							    	    </a>
+							    	</li>
+							    	<?php endforeach ?>
 							    </ul>
 						    </div><!-- /.navbar-collapse -->
 						</div><!-- /.container-fluid -->
 					</nav>
 				</section>
-			</section>	
-		</header>
-		<section class="container">
-			<div class="row">
+			</header>
+			<div class="content row">

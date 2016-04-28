@@ -38,16 +38,31 @@
 |
 */
 
-$route['default_controller'] = "front/main_front/home/es";
+$route['default_controller'] = "front/dispatcher_front/dispatch";
 $route['404_override'] = '';
 
-/** Front Routing **/
-foreach(Tools::getLangs() as $langCode)
+require('application/libraries/Tools.php');
+
+foreach(Tools::GetLangs() as $langCode)
 {
-	$route[$langCode.'/([a-z\_]+)'] = 'front/main_front/$1/'.$langCode;
-	$route[$langCode.'/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'front/$1_front/$2/$3/'.$langCode;
-	$route[$langCode.'/([a-z\_]+)/([a-z\_]+)'] = 'front/$1_front/$2/'.$langCode;
+	$route[$langCode] = 'front/dispatcher_front/dispatch/'.$langCode;
+	$route[$langCode.'/(:any)'] = 'front/dispatcher_front/dispatch/$1/'.$langCode;
 }
+
+/** Front Routing **/
+/*foreach(Tools::GetLangs() as $langCode)
+{
+	foreach(Tools::GetEntities() as $entity)
+	{
+		$route[$langCode.'/'.$entity.'/(:any)'] = 'front/entity_front/'.$entity.'/$1/'.$langCode;
+		//$route[$langCode.'/'.$entity.'/([a-z\_]+)/(:any)'] = 'front/'.$entity.'_front/detail/$1/$2/'.$langCode;		
+	}
+
+	foreach(Tools::GetPages() as $page)
+	{
+		$route[$langCode.'/'.$page] = 'front/page_front/'.$page.'/'.$langCode;
+	}
+}*/
 
 /** Back Routing **/
 $route['admin/([a-z\_]+)/([a-z\_]+)/(:any)'] = 'back/$1_back/$2/$3';

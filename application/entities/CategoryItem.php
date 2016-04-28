@@ -7,6 +7,10 @@ class CategoryItem extends Entity
 	var $name;
 	var $level;
 	var $idParent;
+	var $url;
+
+	var $image;
+	var $path;
 	
 	public function GetCategoryId()
 	{
@@ -46,5 +50,35 @@ class CategoryItem extends Entity
 	public function SetIdParent($idParent)
 	{
 	    $this->idParent = $idParent;
+	}
+
+	public function GetUrl()
+	{
+	    return $this->url;
+	}
+	
+	public function SetUrl($url)
+	{
+	    $this->url = $url;
+	}
+
+	public function GetImage()
+	{
+	    return $this->image;
+	}
+	
+	public function SetImage($image)
+	{
+	    $this->image = $image;
+	}
+
+	public function GetPath()
+	{
+	    return $this->path;
+	}
+	
+	public function SetPath($path)
+	{
+	    $this->path = $path;
 	}
 }

@@ -1,9 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- *
- * Manage Images.
- *
-*/
+
 class Images
 {
 	var $baseDir;
@@ -11,32 +7,25 @@ class Images
 	var $null_photo;
     private $CI;
 
-	function __construct() {
+	function __construct() 
+    {
 		$this->CI =& get_instance();
 		$this->CI->load->helper('url');
 		$this->CI->load->helper('file');
         $this->CI->load->library('upload');
 
-        $this->CI->config->load('project');
-        $public = $this->CI->config->item('public');
-
-        $this->baseDir = $public['images'];
+        $this->baseDir = 'public/images';
         $this->StorePerDir = 100;
-        $this->null_photo	= '';
+        $this->null_photo = '';
 	}
 
-	public function setBase($dir) {
-		$this->baseDir=$dir;
+	public function SetBase($dir) 
+    {
+		$this->baseDir = $dir;
 	}
 
-	/**
-	 *
-	 * @param	string
-	 * @param	string
-	 * @param	bool
-	 * @return	bool
-	 */
-	public function upload($entity, $file_name) {
+	public function Upload($entity, $file_name) 
+    {
 		$file_path = $this->getFilePath($entity, $file_name);
 		$image_name	= $file_name.'-'.date('YmdHis');
 		$config = array(
@@ -48,8 +37,10 @@ class Images
 
 		$this->CI->upload->initialize($config);
 
-        if($this->CI->upload->do_upload($file_name)){
-            if(!$image_data = $this->CI->upload->data()) {
+        if($this->CI->upload->do_upload($file_name))
+        {
+            if(!$image_data = $this->CI->upload->data()) 
+            {
                 Alerts::error("Error Uploading Image");
                 return '';
             }
@@ -60,7 +51,8 @@ class Images
 		return $image;
 	}
 
-	function resize($origin,$props) {
+	function Resize($origin, $props) 
+    {
 		$new = str_replace("_o",'_'.$props['sub'],$origin);
 
 		$config = array(
@@ -76,14 +68,8 @@ class Images
 
 	}
 
-	/**
-	 * remove
-	 *
-     * @param $image
-	 * @return void
-	 */
-	function remove($image)
-    {//die('hola');
+	function Remove($image)
+    {
         if($image == '')
         {
             return;
@@ -102,7 +88,8 @@ class Images
         }
 	}
 
-	public function getFilePath($entity, $file_name) {
+	public function GetFilePath($entity, $file_name) 
+    {
         $file_path = $this->baseDir.'/'.$entity.'/'.$file_name;
         if(!is_dir($file_path)) {
            	mkdir($file_path, 777, true);
@@ -112,7 +99,7 @@ class Images
 		return $file_path;
 	}
 
-    public function is_default($image)
+    public function IsDefault($image)
     {
         $image = str_replace('\\', '/', $image);
         $split = explode('/', $image);
@@ -120,17 +107,21 @@ class Images
         return ($image_name == 'default.jpg');
     }
 
-    public function exists_default($entity, $file_name)
+    public function ExistsDefault($entity, $file_name)
     {
         $file_path = $this->getFilePath($entity, $file_name);
         $default_path = $file_path.'/default.jpg';
         return is_file($default_path);
     }
 
-    public function get_default($entity, $file_name)
+    public function GetDefault($entity, $file_name)
     {
         $default_path = $entity.'/'.$file_name.'/default.jpg';
         return $default_path;
     }
 
+    public static function PublicUrl($relative)
+    {
+        return base_url('public/images/'.$relative);
+    }
 }

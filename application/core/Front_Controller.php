@@ -5,17 +5,22 @@ class Front_Controller extends Base_Controller
     function __construct()
     {
         parent::__construct();
-
+        
         $this->context->Init(Context::FRONT_OFFICE);
-        $this->data["ajax"] = false;
-
-        $this->load->model('entity_model');
-        $this->load->model('traffic_model');
+        $this->data['ajax'] = false;
+        
+        $this->load->model('project_model');
+        $this->load->model('product_model');
         $this->load->model('menu_model');
+        $this->load->model('download_model');
+        $this->load->model('news_model');
 
-        $this->data['mostViewed'] = $this->traffic_model->GetMostViewed();
-        $this->data['recentlyViewed'] = $this->entity_model->GetRecentlyViewed();
-        $this->data['topMenu'] = $this->menu_model->GetFullMenu('top');
+        $this->load->model('path_model');
+        $this->data['termsPath'] = $this->path_model->GetPathByReference('terms');
+        
+        $this->data['downloads'] = $this->download_model->GetDownloads();
+        $this->data['topMenu'] = $this->menu_model->GetFullMenuByName('Top');
+        $this->data['prefooter'] = true;
     }
 
     function LoadView($view, $data = array())

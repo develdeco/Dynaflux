@@ -1,17 +1,22 @@
 <?php
 //Home
-$lang['ProjectsBlockTitle'] = 'proyectos culminados';
-$lang['ProductsBlockTitle'] = 'productos destacados';
+$lang['ProjectsBlockTitle'] = 'Casos de uso';
+$lang['ProductsBlockTitle'] = 'Productos destacados';
 
 //News
-$lang['NewsBlockTitle'] = 'ultimas noticias';
+$lang['NewsBlockTitle'] = 'Participaciones';
 
 //Contact
-$lang['OfficesTabTitle'] = 'oficinas';
-$lang['ContactTabTitle'] = 'contacto';
+$lang['OfficesTabTitle'] = 'Oficinas';
+$lang['ContactTabTitle'] = 'Contacto';
 $lang['FormNameLabel'] = 'Nombre';
 $lang['FormEmailLabel'] = 'Email';
 $lang['FormSubjectLabel'] = 'Asunto';
+$lang['FormContactLabel'] = 'Contacto';
+$lang['FormContentLabel'] = 'Mensaje';
 $lang['FormSendButton'] = 'Enviar';
+
+$lang['Of'] = 'de';
+$lang['CaptchaError'] = 'El captcha esta vacío';
 
 ?>

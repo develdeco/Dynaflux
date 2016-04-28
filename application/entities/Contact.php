@@ -4,6 +4,7 @@ class Contact extends Entity
 {
 	var $id;
 	var $name;
+	var $position;
 	var $email;
 	var $phone;
 
@@ -15,6 +16,16 @@ class Contact extends Entity
 	public function SetName($name)
 	{
 	    $this->name = $name;
+	}
+
+	public function GetPosition()
+	{
+	    return $this->position;
+	}
+	
+	public function SetPosition($position)
+	{
+	    $this->position = $position;
 	}
 
 	public function GetEmail()
