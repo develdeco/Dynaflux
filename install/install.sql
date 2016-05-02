@@ -91,14 +91,17 @@ CREATE TABLE `tag` (
 
 /*!40000 ALTER TABLE `tag` DISABLE KEYS */;
 INSERT INTO `tag` (`id`,`name`,`type`) VALUES 
-('TAG1','Test1','news'),
-('TAG2','Test2','news'),
-('TAG3','Test3','news'),
-('TAG4','Test4','news'),
-('TAG5','Test5','project'),
-('TAG6','Test6','project'),
-('TAG7','Test7','project'),
-('TAG8','Test8','project');
+('TAG1','PTAP','project'),
+('TAG2','Dosificación de reactivos','project'),
+('TAG3','Llenado de cal','project'),
+('TAG4','Aguas ácidas','project'),
+('TAG5','Planta de tratamiento','project'),
+('TAG6','Sistema automático','project'),
+('TAG7','Molienda y rotación','project'),
+('TAG8','Control de cloro libre','project'),
+('TAG9','Control de Ph','project'),
+('TAG10','Piscinas','project'),
+('TAG11','Aguas residuales domésticas','project');
 /*!40000 ALTER TABLE `tag` ENABLE KEYS */;
 
 --
@@ -145,12 +148,20 @@ CREATE TABLE `project_tag` (
 
 /*!40000 ALTER TABLE `project_tag` DISABLE KEYS */;
 INSERT INTO `project_tag` (`id`,`projectId`,`tagId`) VALUES 
-('PT1','PROJ1','TAG5'),
-('PT2','PROJ2','TAG6'),
-('PT3','PROJ2','TAG7'),
-('PT4','PROJ3','TAG8'),
-('PT5','PROJ1','TAG6'),
-('PT6','PROJ3','TAG5');
+('PT1','PROJ1','TAG3'),
+('PT2','PROJ1','TAG6'),
+('PT3','PROJ3','TAG1'),
+('PT4','PROJ3','TAG2'),
+('PT5','PROJ4','TAG4'),
+('PT6','PROJ4','TAG5'),
+('PT7','PROJ6','TAG2'),
+('PT8','PROJ6','TAG7'),
+('PT9','PROJ8','TAG5'),
+('PT10','PROJ8','TAG11'),
+('PT11','PROJ9','TAG6'),
+('PT12','PROJ9','TAG8'),
+('PT13','PROJ9','TAG9'),
+('PT14','PROJ9','TAG10');
 /*!40000 ALTER TABLE `project_tag` ENABLE KEYS */;
 
 --
@@ -526,7 +537,8 @@ INSERT INTO `image` (`id`,`path`,`name`) VALUES
 ('IMG102','sodimate_logo.jpg','Sodimate'),
 ('IMG103','eec_logo.jpg','EEC'),
 ('IMG104','vak_kimsa_logo.jpg','Vak Kimsa'),
-('IMG105','ING3.jpg','Investigación y Desarrollo');
+('IMG105','ING3.jpg','Investigación y Desarrollo'),
+('IMG106','Quimpac-1.jpg','Proyecto Quimpac');
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 
 --
@@ -652,7 +664,13 @@ INSERT INTO `entity_image` (`id`,`idEntity`,`idImage`,`group`) VALUES
 ('EI113','TM7','IMG101','logo'),
 ('EI114','TM8','IMG102','logo'),
 ('EI115','TM9','IMG103','logo'),
-('EI116','TM10','IMG104','logo');
+('EI116','TM10','IMG104','logo'),
+('EI117','PROJ1','IMG106','photo'),
+('EI118','PROJ3','IMG18','photo'),
+('EI119','PROJ4','IMG89','photo'),
+('EI120','PROJ6','IMG91','photo'),
+('EI121','PROJ8','IMG93','photo'),
+('EI122','PROJ9','IMG94','photo');
 /*!40000 ALTER TABLE `entity_image` ENABLE KEYS */;
 
 --
@@ -891,7 +909,10 @@ INSERT INTO `translation` (`id`,`entityId`,`langCode`) VALUES
 ('TRANS213','PROJ10','es'),
 ('TRANS214','CONT12','es'),
 ('TRANS215','MI93','es'),
-('TRANS216','PROD58','es');
+('TRANS216','PROD58','es'),
+('TRANS217','TAG9','es'),
+('TRANS218','TAG10','es'),
+('TRANS219','TAG11','es');
 /*!40000 ALTER TABLE `translation` ENABLE KEYS */;
 
 --
@@ -1361,14 +1382,14 @@ INSERT INTO `path` (`id`,`url`,`type`,`reference`,`isContent`) VALUES
 ('PATH80','alto-cayma-sistema-de-dosificacion-de-reactivos-ptap','project','PROJ3',0),
 ('PATH81','controladores/walchem/wec400','equipment','PROD4',0),
 ('PATH82','controladores/walchem/wdis410','equipment','PROD2',0),
-('PATH83','noticias/Test1','tag','TAG1',0),
-('PATH84','noticias/Test2','tag','TAG2',0),
-('PATH85','noticias/Test3','tag','TAG3',0),
-('PATH86','noticias/Test4','tag','TAG4',0),
-('PATH87','proyectos/Test5','tag','TAG5',0),
-('PATH88','proyectos/Test6','tag','TAG6',0),
-('PATH89','proyectos/Test7','tag','TAG7',0),
-('PATH90','proyectos/Test8','tag','TAG8',0),
+('PATH83','proyectos/ptap','tag','TAG1',0),
+('PATH84','proyectos/dosificacion-de-reactivos','tag','TAG2',0),
+('PATH85','proyectos/llenado-de-cal','tag','TAG3',0),
+('PATH86','proyectos/aguas-acidas','tag','TAG4',0),
+('PATH87','proyectos/planta-de-tratamiento','tag','TAG5',0),
+('PATH88','proyectos/sistema-automatico','tag','TAG6',0),
+('PATH89','proyectos/molienda-y-rotacion','tag','TAG7',0),
+('PATH90','proyectos/control-de-cloro-libre','tag','TAG8',0),
 ('PATH91','bombas-dosificadoras/walchem-&-iwaki/serie-ix','equipment','PROD18',0),
 ('PATH92','terminos-&-condiciones','page','terms',NULL),
 ('PATH93','terms-&-conditions','page','terms',NULL),
@@ -1379,7 +1400,10 @@ INSERT INTO `path` (`id`,`url`,`type`,`reference`,`isContent`) VALUES
 ('PATH98','cemento-sur-planta-de-tratamiento-de-aguas-domesticas','project','PROJ8',0),
 ('PATH99','aqualife-sistema-automatico-para-control-de-cloro-libre-y-ph-en-pisicinas','project','PROJ9',0),
 ('PATH100','minera-bateas-medicion-de-flujos-de-agua-de-entrada-y-salida','project','PROJ10',0),
-('PATH101','bombas-portatiles/standard-pump/motores-series-sp400-2','equipment','PROD58',0);
+('PATH101','bombas-portatiles/standard-pump/motores-series-sp400-2','equipment','PROD58',0),
+('PATH102','proyectos/control-de-ph','tag','TAG9',0),
+('PATH103','proyectos/piscinas','tag','TAG10',0),
+('PATH104','proyectos/aguas-residuales-domesticas','tag','TAG11',0);
 /*!40000 ALTER TABLE `path` ENABLE KEYS */;
 
 --

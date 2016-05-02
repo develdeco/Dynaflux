@@ -65,6 +65,8 @@ class EntityDispatcher
 			case 'es': $this->CI->data['topActive'] = "equipos"; break;
 			case 'en': $this->CI->data['topActive'] = "equipment"; break;
 		}
+
+		$this->CI->data['title'] = 'Equipos';
 		
 		$this->Product($id_equipment, 'equipment');
 	}
@@ -76,6 +78,8 @@ class EntityDispatcher
 			case 'es': $this->CI->data['topActive'] = "sistemas"; break;
 			case 'en': $this->CI->data['topActive'] = "systems"; break;
 		}
+
+		$this->CI->data['title'] = 'Sistemas';
 		
 		$this->Product($id_system, 'system');
 	}
@@ -87,6 +91,8 @@ class EntityDispatcher
 			case 'es': $this->CI->data['topActive'] = "noticias"; break;
 			case 'en': $this->CI->data['topActive'] = "news"; break;
 		}
+
+		$this->CI->data['title'] = 'Noticias';
 		
 		$this->CI->load->model('news_model');
 		$news = $this->CI->news_model->GetEntity($id_news,array('tag','content','photo'));		
@@ -124,32 +130,22 @@ class EntityDispatcher
 
 		$this->CI->data['type'] = $tag->GetType();
 		$this->CI->data['name'] = $tag->GetName();
+		$this->CI->data['title'] = $tag->GetName();
 
 		$this->CI->load->model('path_model');
 
 		switch($tag->GetType())
 		{
 			case 'news':
-				switch($this->CI->context->GetLangCode())
-				{
-					case 'es': $this->CI->data['topActive'] = "noticias"; break;
-					case 'en': $this->CI->data['topActive'] = "news"; break;
-				}
-
+				$this->CI->data['topActive'] = "news";
 				$this->CI->data['items'] = $this->CI->tag_model->GetNewsByTag($id_tag);
 			break;
 			
 			case 'project':
-				switch($this->CI->context->GetLangCode())
-				{
-					case 'es': $this->CI->data['topActive'] = "proyectos"; break;
-					case 'en': $this->CI->data['topActive'] = "projects"; break;
-				}
-				
+				$this->CI->data['topActive'] = "projects";
 				$this->CI->data['items'] = $this->CI->tag_model->GetProjectsByTag($id_tag);
 			break;
 		}
-		
 
 		$tags = $this->CI->tag_model->GetEntityList(
 			array('wherenot'=>array('id'=>$id_tag),'where'=>array('type'=>$tag->GetType())),array('path'));		
@@ -160,19 +156,17 @@ class EntityDispatcher
 
 	function project($id_project)
 	{
-		switch($this->CI->context->GetLangCode())
-		{
-			case 'es': $this->CI->data['topActive'] = "casos-de-uso"; break;
-			case 'en': $this->CI->data['topActive'] = "use-cases"; break;
-		}
+
+		$this->CI->data['topActive'] = "projects";
 		
 		$this->CI->load->model('project_model');
-		$project = $this->CI->project_model->GetEntity($id_project,array('tag','description','photo'));		
+		$project = $this->CI->project_model->GetEntity($id_project,array('tag','description','photo'));
 		$this->CI->data['project'] = $project;
+		$this->CI->data['title'] = $project->GetName();
 		
 		$this->CI->load->model('tag_model');
 		$tags = $this->CI->tag_model->GetEntityList(
-			array('where'=>array('type'=>'project')),array('path'));
+			array('where'=>array('type'=>'project')),array('path')); 
 		$this->CI->data['tags'] = $tags;
 
 		$this->CI->load->model('path_model');

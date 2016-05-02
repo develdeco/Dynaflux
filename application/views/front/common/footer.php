@@ -22,7 +22,7 @@
 					</div>
 					<div class="col-md-3 shadow-edges">
 						<div class="bottom-menu">
-							<div class="title">Casos de uso</div>
+							<div class="title">Casos de éxito</div>
 							<ul class="nav">
 								<?php foreach($completedProjects as $project): ?>
 								<li>

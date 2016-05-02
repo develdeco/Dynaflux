@@ -12,6 +12,8 @@ class PageDispatcher
 	function home()
 	{
 		$this->CI->data['topActive'] = '';
+
+		$this->CI->data['title'] = 'Bienvenido';
 		
 		$this->CI->load->model('slider_model');
 		
@@ -29,6 +31,8 @@ class PageDispatcher
 	function aboutus()
 	{
 		$this->CI->data['topActive'] = 'aboutus';
+
+		$this->CI->data['title'] = 'Nosotros';
 		
 		$this->CI->load->model('department_model');
 		$this->CI->load->model('content_model');
@@ -47,6 +51,8 @@ class PageDispatcher
 	{
 		$this->CI->data['topActive'] = 'news';
 
+		$this->CI->data['title'] = 'Noticias';
+
 		$this->CI->load->model('news_model');
 		$this->CI->load->model('tag_model');
 
@@ -63,11 +69,13 @@ class PageDispatcher
 	function projects()
 	{
 		$this->CI->data['topActive'] = 'projects';
+
+		$this->CI->data['title'] = 'Casos de éxito';
 			
 		$this->CI->load->model('project_model');
 		$this->CI->load->model('tag_model');
 
-		$projects = $this->CI->project_model->GetEntityList(array(),array('path','summary','photo','gallery'));
+		$projects = $this->CI->project_model->GetEntityList(array(),array('path','summary','photo'));
 
 		$this->CI->data['projects'] = $projects;
 
@@ -80,6 +88,9 @@ class PageDispatcher
 	function contact()
 	{
 		$this->CI->data['topActive'] = 'contact';
+
+		$this->CI->data['title'] = 'Contacto';
+
 		$this->CI->data['lang'] = $this->CI->context->GetLangCode();
 
 		$this->CI->load->library('form_validation');
@@ -157,6 +168,8 @@ class PageDispatcher
 	function services()
 	{
 		$this->CI->data['topActive'] = 'services';
+
+		$this->CI->data['title'] = 'Servicios';
 		
 		$this->CI->load->model('services_model');
 		$this->CI->data['services'] = $this->CI->services_model->GetServices();
@@ -167,6 +180,8 @@ class PageDispatcher
 	function equipment()
 	{
 		$this->CI->data['topActive'] = 'equipos';
+
+		$this->CI->data['title'] = 'Equipos';
 		
 		$this->CI->load->model('category_model');
 		$this->CI->data['equipment'] = $this->CI->category_model->GetItemsByCategory('Equipos');
@@ -177,6 +192,8 @@ class PageDispatcher
 	function systems()
 	{
 		$this->CI->data['topActive'] = 'sistemas';
+
+		$this->CI->data['title'] = 'Sistemas';
 		
 		$this->CI->load->model('product_model');
 		$this->CI->data['systems'] = $this->CI->product_model->GetEntityList(array(
@@ -189,6 +206,8 @@ class PageDispatcher
 	function terms()
 	{
 		$this->CI->data['topActive'] = 'terms';
+
+		$this->CI->data['title'] = 'Términos y condiciones';
 
 		$this->CI->load->model('content_model');
 		$terms = $this->CI->content_model->GetEntity('CONT10');

@@ -1,14 +1,18 @@
-<section class="related-projects col-md-3">
+<section class="related-projects tags col-md-4">
 	<div class="shadow-block rounded">
-	<?php if(!empty($projects)): ?>
-	<div class="backgrounded-block-title">Casos similares</div>
-	<?php $this->load->view('front/block/projects_short') ?>
-	<?php else: ?>
-	Primer proyecto de esta categoría
-	<?php endif ?>	
+		<?php if(!empty($projects)): ?>
+		<div class="backgrounded-block-title">Casos similares</div>
+		<?php $this->load->view('front/block/projects_short') ?>
+		<?php else: ?>
+		Primer proyecto de esta categoría
+		<?php endif ?>
+	</div>
+	<div class="shadow-block rounded">
+		<div class="backgrounded-block-title">Categor&iacute;as</div>
+		<?php $this->load->view('front/block/tags') ?>
 	</div>
 </section>
-<section class="project-detail col-md-6">
+<section class="project-detail col-md-8">
 	<h2 class="project-title"><?php echo $project->GetName() ?></h4>
 	<div class="project-photo">
 		<?php if($project->GetPhoto() != null): ?>
@@ -53,12 +57,6 @@
 	</ul>
 	</div>
 	<?php endif ?>
-</section>
-<section class="tags col-md-3">
-	<div class="shadow-block rounded">
-		<div class="backgrounded-block-title">Categor&iacute;as</div>
-		<?php $this->load->view('front/block/tags') ?>
-	</div>
 </section>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo Tools::PublicUrl('css/vendor/colorbox.css') ?>" />
 <script src="<?php echo Tools::PublicUrl('js/vendor/jquery.colorbox-min.js') ?>"></script>

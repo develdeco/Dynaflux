@@ -2,7 +2,7 @@
 <html>
 	<head> 
 	<meta charset="UTF-8">
-	<title><?php echo empty($topActive)?'':$topActive.' | ' ?>Dynaflux</title>
+	<title><?php echo empty($title)?'':$title.' | ' ?>Dynaflux</title>
 	<!-- meta name="viewport" content="width=device-width" /-->
 	<link rel="shortcut icon" href="<?php echo Tools::WebImageUrl('favicon.png') ?>" type="image/x-icon">
 	<!-- link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:600,700&amp;subset=latin" media="all" /-->

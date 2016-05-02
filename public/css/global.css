@@ -217,7 +217,8 @@ section .slider{
     color: #777;
     font-family: 'Titillium Web';
     float: left;
-    width: 16.66%;
+    /*width: 16.66%;*/
+    width: 20%;
     border-bottom: 4px solid #ccc;
 }
 #bx-pager > a.active,
@@ -374,7 +375,7 @@ section.featured-products p{
 .information-blocks .block{
 	text-align: center;
 	position: relative;
-	min-height: 243px;
+	min-height: 267px;
 	padding: 11px 15px 8px;
 }
 .information-blocks .block-title{
@@ -520,13 +521,15 @@ section.featured-products p{
 }
 .related-news .news-block > li,
 .related-projects .projects-block > li{
-	height: 67px;
+	height: 75px;
 	overflow: hidden;
 }
 .related-news .news-block .news-image > img,
 .related-projects .projects-block .project-image > img{
-	height: 55px;
-	width: 75px;
+	/*height: 55px;
+	width: 75px;*/
+	height: 75px;
+	width: 110px;
 }
 .related-news .news-block .news-title,
 .related-projects .projects-block .project-title{
@@ -1107,14 +1110,15 @@ section.project-detail h2.project-title{
 }
 section.project-detail .project-photo,
 section.news-detail .news-photo{
+	margin: 0 auto;
 	margin-top: 15px;
 	height: 300px;
-	width: 520px;
+	width: 700px;
 	text-align: center;
 }
 section.project-detail .project-photo img{
 	max-height: 300px;
-	max-width: 520px;
+	max-width: 700px;
 }
 section.news-detail .content{
 	margin-top: 10px;
@@ -1274,8 +1278,11 @@ section.services .service .name{
 	font-size: 15px;
 	margin-bottom: 20px;
 	list-style: none;
-	height: 230px;
+	height: 145px;
 	text-align: center;
+}
+.filtered-projects .projects-extended .project{
+	height: 250px;
 }
 .news-extended .news-title,
 .projects-extended .project-title
@@ -1314,6 +1321,10 @@ section.services .service .name{
 	width: 180px;
 	text-align: center;
 	line-height: 120px;
+}
+.filtered-projects .projects-extended .project-image {
+	width: 100%;
+	height: auto;
 }
 .news-extended .news-image img
 {
@@ -1387,6 +1398,7 @@ section.services .service .name{
 .news-detail,
 .project-detail{
 	margin-bottom: 10px;
+	padding-right: 25px;
 }
 legend {
 	padding: 10px 0;

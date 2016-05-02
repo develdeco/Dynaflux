@@ -8,16 +8,15 @@
     <?php else: ?>
     <div class="project nice-block rounded">
     <?php endif ?>
-        <!--div class="project-image">
-            <?php if($project->GetPhoto() != null): ?>
+        <?php $project_photo = $project->GetPhoto() ?>
+        <?php $project_gallery = $project->GetGallery() ?>
+
+        <?php if(!empty($project_photo)): ?>
+        <div class="project-image">
             <img src="<?php echo Images::PublicUrl($project->GetPhoto()->GetPath()) ?>" 
                 alt="<?php echo $project->GetName() ?>">
-            <?php else: ?>
-            <img alt="<?php echo $project->GetName() ?>">
-            <?php endif ?>
-        </div-->
-        <?php $project_gallery = $project->GetGallery() ?>
-        <?php if(!empty($project_gallery)): ?>
+        </div>
+        <?php elseif(!empty($project_gallery)): ?>
         <?php $importGalleryLibraries = true ?>
         <div id="project-images-list" class="project-images <?php echo (count($project->GetGallery())>5)?' scroller':'' ?>">
             <!--div class="list-title">Galería</div-->

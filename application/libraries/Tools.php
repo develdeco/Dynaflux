@@ -86,4 +86,9 @@ class Tools
         $filePath = $baseDir.'/'.$filePath;
         return file_get_contents($filePath);
     }
+
+    public static function Title($name)
+    {
+        return str_replace('-',' ',ucfirst($name));
+    }
 }
