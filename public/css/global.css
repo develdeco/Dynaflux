@@ -47,19 +47,14 @@ h1, h2, h3, h4, h5, h6
 }		
 .social{
 	float: right;
-	margin-top: 10px;
-}				
-.header .logo img{
-	width: 61%;
-	height: 34px;
-	margin-left: -3px;
+	/*margin-top: 10px;*/
+	margin-right: 20px;
 }
-.header-first{
-	margin: 20px 0;
-	display: inline-block;
-	width: 100%;
+.social li a {
+	margin-left: 10px;
+	padding: 0;
 }
-.social li a{
+/*.social li a{
 	background: url(../images/web/facebook-icon.png) no-repeat;
 	width: 20px;
 	height: 20px;
@@ -69,10 +64,20 @@ h1, h2, h3, h4, h5, h6
 }
 .social li.youtube a{
 	background: url(../images/web/youtube-icon.png) no-repeat;
-}
+}*/
 .social .nav > li > a:hover, 
 .social .nav > li > a:focus{
 	background-color: transparent;
+}			
+.header .logo img{
+	width: 61%;
+	height: 34px;
+	margin-left: -3px;
+}
+.header-first{
+	margin: 20px 0;
+	display: inline-block;
+	width: 100%;
 }
 nav .container-fluid{
 	padding: 0;
@@ -612,6 +617,18 @@ footer{
 }
 .footer > div{
 	border-top: 1px solid #999;
+}
+.footer .social {
+	float: none;
+    text-align: center;
+    margin: 0 auto;
+}
+.footer .social ul {
+	display: inline-block;
+    float: none;
+}
+.footer .social ul a {
+	margin: 0 5px;
 }
 footer .title{
 	padding-left: 10px;
