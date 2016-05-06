@@ -580,7 +580,7 @@ footer{
 }
 .prefooter{	
 	padding: 10px 0 15px 0;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 	border-bottom: 1px dotted #fff;
 }
 .prefooter .nav{
@@ -622,6 +622,7 @@ footer{
 	float: none;
     text-align: center;
     margin: 0 auto;
+    padding-top: 10px;
 }
 .footer .social ul {
 	display: inline-block;
