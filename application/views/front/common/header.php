@@ -20,9 +20,17 @@
 					<div class="logo"><a href="<?php echo base_url() ?>"><img src="<?php echo Tools::WebImageUrl('logo.png') ?>" alt=""></a></div>
 					<div class="social">
 						<ul class='nav navbar-nav'>
-							<li class='facebook'><a target="_blank" href="https://www.facebook.com/dynaflux.fluidos" title='facebook'><img src="<?php echo Tools::WebImageUrl('youtube.png') ?>" width="25" height="25"></a></li>
+							<li class='facebook'>
+								<a target="_blank" href="https://www.facebook.com/dynaflux.fluidos" title='facebook'>
+									<img src="<?php echo Tools::WebImageUrl('square-facebook-128.png') ?>" width="25" height="25">
+								</a>
+							</li>
 							<!--li class='twitter'><a href="#" title='twitter'></a></li-->
-							<li class='youtube'><a target="_blank" href="https://www.youtube.com/channel/UCugx0NxmTqEFimj82-m254w" title='youtube'><img src="<?php echo Tools::WebImageUrl('square-facebook-128.png') ?>" width="25" height="25"></a></li>
+							<li class='youtube'>
+								<a target="_blank" href="https://www.youtube.com/channel/UCugx0NxmTqEFimj82-m254w" title='youtube'>
+									<img src="<?php echo Tools::WebImageUrl('youtube.png') ?>" width="25" height="25">
+								</a>
+							</li>
 						</ul>
 					</div>
 				</section>

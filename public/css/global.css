@@ -497,6 +497,7 @@ section.featured-products p{
 	box-shadow: 0 0 4px rgba(0,0,0,.3);
 	padding: 10px;
 	height: 149px;
+	width: 155px;
 	line-height: 124.5px;
 	background: #fff;
 	text-align: center;
@@ -580,7 +581,6 @@ footer{
 }
 .prefooter{	
 	padding: 10px 0 15px 0;
-	/*margin-bottom: 10px;*/
 	border-bottom: 1px dotted #fff;
 }
 .prefooter .nav{
@@ -613,9 +613,10 @@ footer{
 	color: white;
 }
 .footer{
-	color: #fff;
+	color: #fff;	
 }
 .footer > div{
+	padding-top: 10px;
 	border-top: 1px solid #999;
 }
 .footer .social {
@@ -1273,6 +1274,7 @@ section.services .service .name{
 .summary-list .list-content
 {
 	margin-top: 10px;
+	display: inline-block;
 }
 .news-extended,
 .projects-extended
