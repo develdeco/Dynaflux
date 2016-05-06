@@ -612,10 +612,10 @@ footer{
 	color: white;
 }
 .footer{
-	color: #fff;
-	padding-top: 10px;
+	color: #fff;	
 }
 .footer > div{
+	padding-top: 10px;
 	border-top: 1px solid #999;
 }
 .footer .social {
@@ -1272,6 +1272,7 @@ section.services .service .name{
 .summary-list .list-content
 {
 	margin-top: 10px;
+	display: inline-block;
 }
 .news-extended,
 .projects-extended

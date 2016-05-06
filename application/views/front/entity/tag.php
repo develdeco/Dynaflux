@@ -11,14 +11,14 @@
 </section>
 <?php break; case 'project': ?>
 <section class="filtered-projects col-md-9 summary-list">
-	<div class="shadow-block block-padding rounded">
-		<div class="list-title">
+	<!--div class="shadow-block block-padding rounded"-->
+		<div class="list-title col-md-12">
 			Filtro: "<?php echo $name ?>"
 		</div>
 		<div class="list-content">
 		<?php $this->load->view('front/block/projects_extended',array('projects'=>$items)) ?>
 		</div>
-	</div>
+	<!--/div-->
 </section>
 <?php break; } ?>
 <section class="tags col-md-3">
