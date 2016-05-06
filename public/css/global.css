@@ -579,8 +579,7 @@ footer{
 	height: 4px;
 }
 .prefooter{	
-	padding: 10px 0 15px 0;
-	margin-bottom: 10px;
+	padding: 10px 0 15px 0;	
 	border-bottom: 1px dotted #fff;
 }
 .prefooter .nav{
@@ -614,6 +613,7 @@ footer{
 }
 .footer{
 	color: #fff;
+	padding-top: 10px;
 }
 .footer > div{
 	border-top: 1px solid #999;
